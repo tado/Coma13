@@ -1,6 +1,4 @@
 #include "testApp.h"
-#include "Blink.h"
-#include "Colorbar.h"
 #include "ColorSphere.h"
 
 //--------------------------------------------------------------
@@ -8,8 +6,6 @@ void testApp::setup(){
     //ofSetVerticalSync(true);
     ofxSuperColliderServer::init(57110, 192000);
     
-	stateMachine.addState<Blink>();
-	stateMachine.addState<Colorbar>();
 	stateMachine.addState<ColorSphere>();
 	stateMachine.changeState("colorSphere");
 }

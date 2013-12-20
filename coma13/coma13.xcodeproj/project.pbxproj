@@ -9,11 +9,6 @@
 /* Begin PBXBuildFile section */
 		0546D1A38E13BD319CC9755B /* OscReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9BF3AA0D4FAA89D0F8A0E545 /* OscReceivedElements.cpp */; };
 		14A503607FFA09AE34186B76 /* ofxSCGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15ACE3D73F384D1B71D52792 /* ofxSCGroup.cpp */; };
-		18535D211861E00D004E2842 /* Colorbar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18535D1F1861E00D004E2842 /* Colorbar.cpp */; };
-		18535D231861E0B4004E2842 /* colorbar.frag in Sources */ = {isa = PBXBuildFile; fileRef = 18535D221861E0B4004E2842 /* colorbar.frag */; };
-		185622D718606B94005484FB /* Blink.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 185622D518606B94005484FB /* Blink.cpp */; };
-		185622DC18607DAB005484FB /* blink.frag in Sources */ = {isa = PBXBuildFile; fileRef = 185622DB18607DAB005484FB /* blink.frag */; };
-		186C9EE61864107700E8A196 /* colorbar.vert in Sources */ = {isa = PBXBuildFile; fileRef = 186C9EE51864107700E8A196 /* colorbar.vert */; };
 		186C9EEA1864343000E8A196 /* ColorSphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 186C9EE81864343000E8A196 /* ColorSphere.cpp */; };
 		186C9EEF18643A4800E8A196 /* colorSphere.frag in Sources */ = {isa = PBXBuildFile; fileRef = 186C9EED18643A4800E8A196 /* colorSphere.frag */; };
 		186C9EF018643A4800E8A196 /* colorSphere.vert in Sources */ = {isa = PBXBuildFile; fileRef = 186C9EEE18643A4800E8A196 /* colorSphere.vert */; };
@@ -103,15 +98,8 @@
 		029684CF678F70F6D3537A29 /* OscOutboundPacketStream.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscOutboundPacketStream.h; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscOutboundPacketStream.h; sourceTree = SOURCE_ROOT; };
 		0AED834CE4DEC5260AF302A2 /* ofxOscParameterSync.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxOscParameterSync.cpp; path = ../../../addons/ofxOsc/src/ofxOscParameterSync.cpp; sourceTree = SOURCE_ROOT; };
 		15ACE3D73F384D1B71D52792 /* ofxSCGroup.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxSCGroup.cpp; path = ../../../addons/ofxSuperCollider/src/ofxSCGroup.cpp; sourceTree = SOURCE_ROOT; };
-		18535D1F1861E00D004E2842 /* Colorbar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Colorbar.cpp; sourceTree = "<group>"; };
-		18535D201861E00D004E2842 /* Colorbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colorbar.h; sourceTree = "<group>"; };
-		18535D221861E0B4004E2842 /* colorbar.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = colorbar.frag; path = bin/data/colorbar.frag; sourceTree = SOURCE_ROOT; };
 		185527997F0B73A279912DB2 /* ofxStateMachine.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxStateMachine.h; path = ../../../addons/ofxStateMachine/src/ofxStateMachine.h; sourceTree = SOURCE_ROOT; };
-		185622D518606B94005484FB /* Blink.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Blink.cpp; sourceTree = "<group>"; };
-		185622D618606B94005484FB /* Blink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Blink.h; sourceTree = "<group>"; };
 		185622D918606DA2005484FB /* SharedData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedData.h; sourceTree = "<group>"; };
-		185622DB18607DAB005484FB /* blink.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = blink.frag; path = bin/data/blink.frag; sourceTree = SOURCE_ROOT; };
-		186C9EE51864107700E8A196 /* colorbar.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = colorbar.vert; path = bin/data/colorbar.vert; sourceTree = SOURCE_ROOT; };
 		186C9EE81864343000E8A196 /* ColorSphere.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColorSphere.cpp; sourceTree = "<group>"; };
 		186C9EE91864343000E8A196 /* ColorSphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorSphere.h; sourceTree = "<group>"; };
 		186C9EED18643A4800E8A196 /* colorSphere.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = colorSphere.frag; path = bin/data/colorSphere.frag; sourceTree = SOURCE_ROOT; };
@@ -296,13 +284,6 @@
 			isa = PBXGroup;
 			children = (
 				185622D918606DA2005484FB /* SharedData.h */,
-				185622D618606B94005484FB /* Blink.h */,
-				185622D518606B94005484FB /* Blink.cpp */,
-				185622DB18607DAB005484FB /* blink.frag */,
-				18535D201861E00D004E2842 /* Colorbar.h */,
-				18535D1F1861E00D004E2842 /* Colorbar.cpp */,
-				18535D221861E0B4004E2842 /* colorbar.frag */,
-				186C9EE51864107700E8A196 /* colorbar.vert */,
 				186C9EE91864343000E8A196 /* ColorSphere.h */,
 				186C9EE81864343000E8A196 /* ColorSphere.cpp */,
 				186C9EED18643A4800E8A196 /* colorSphere.frag */,
@@ -826,26 +807,21 @@
 				67FE4C7B15C2F0478C8126C2 /* NetworkingUtils.cpp in Sources */,
 				510CAFE035E576A4E1502D52 /* UdpSocket.cpp in Sources */,
 				A29D8C96AE042ECEAA1BD4F3 /* NetworkingUtilsWin.cpp in Sources */,
-				18535D231861E0B4004E2842 /* colorbar.frag in Sources */,
 				186C9EEA1864343000E8A196 /* ColorSphere.cpp in Sources */,
 				28090DEB5109115003E8F1C5 /* UdpSocketWin.cpp in Sources */,
 				62545D179C94265CA1389D4A /* OscOutboundPacketStream.cpp in Sources */,
 				186C9EEF18643A4800E8A196 /* colorSphere.frag in Sources */,
 				C4782ECC372420ACE0615B74 /* OscPrintReceivedElements.cpp in Sources */,
-				186C9EE61864107700E8A196 /* colorbar.vert in Sources */,
 				0546D1A38E13BD319CC9755B /* OscReceivedElements.cpp in Sources */,
 				879A251454401BC0B6E4F238 /* OscTypes.cpp in Sources */,
-				185622DC18607DAB005484FB /* blink.frag in Sources */,
 				18A424DB18632E1400D44302 /* ofxSuperColliderServer.cpp in Sources */,
 				EBB8288FD606C26DEDC99CED /* ofxSCBuffer.cpp in Sources */,
 				BB896DB80D22F8F1CAAC31B5 /* ofxSCBus.cpp in Sources */,
 				14A503607FFA09AE34186B76 /* ofxSCGroup.cpp in Sources */,
-				18535D211861E00D004E2842 /* Colorbar.cpp in Sources */,
 				4D49EBD7A724D465F110B138 /* ofxSCNode.cpp in Sources */,
 				18CB16E9947C4281DF428573 /* ofxSCResourceAllocator.cpp in Sources */,
 				9886A45FECEEC9EF860EF6C6 /* ofxSCServer.cpp in Sources */,
 				5E5ABC8F3876CF57036C2E44 /* ofxSCSynth.cpp in Sources */,
-				185622D718606B94005484FB /* Blink.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

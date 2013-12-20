@@ -8,7 +8,7 @@ uniform float time;
 uniform vec2 mouse;
 uniform vec2 resolution;
 
-const int num = 5;
+const int num = 6;
 uniform int col[num];
 uniform float freq[num];
 uniform float phase[num];

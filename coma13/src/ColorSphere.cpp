@@ -34,14 +34,20 @@ void ColorSphere::draw(){
     
     float time = ofGetElapsedTimef();
     float resolution[] = {ofGetWidth(), ofGetHeight()};
-    
     for (int i = 0; i < MAX_SYNTH; i++) {
+        col[i] = 0;
+        freq[i] = 0;
+        phase[i] = 0;
+        amp[i] = 0;
+        lfo[i] = 0;
+    }
+    for (int i = 0; i < shaderParams.size(); i++) {
         col[i] = shaderParams[i].col;
         freq[i] = shaderParams[i].freq;
         phase[i] = shaderParams[i].phase;
         lfo[i] = shaderParams[i].lfo;
         if(shaderParams[i].amp < 1.0){
-            shaderParams[i].amp += 0.01;
+            shaderParams[i].amp += 0.005;
             if(shaderParams[i].amp > 1.0){
                 shaderParams[i].amp  = 1.0;
             }
@@ -49,7 +55,7 @@ void ColorSphere::draw(){
         amp[i] = shaderParams[i].amp;
     }
     
-    if(shaderParams.size() > 0){
+    //if(shaderParams.size() > 0){
         fbo.begin();
         shader.begin();
         shader.setUniform1f("time", time);
@@ -71,7 +77,7 @@ void ColorSphere::draw(){
         ofDisableBlendMode();
         shader.end();
         fbo.end();
-    }
+    //}
 }
 
 void ColorSphere::mousePressed(int x, int y, int button){
@@ -107,12 +113,13 @@ void ColorSphere::mouseReleased(int x, int y, int button){
     sd.synth->set("lfoFreq",1.0);
     sd.synth->set("pan", pan);
     sd.synth->set("amp", amp);
-    
     shaderParams.push_back(sd);
+    
     if (shaderParams.size() > MAX_SYNTH) {
         shaderParams[0].synth->set("gate", 0);
         shaderParams.pop_front();
     }
+    
     counter++;
 }
 
