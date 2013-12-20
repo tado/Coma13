@@ -21,7 +21,7 @@ class ColorSphere : public itg::ofxState<> {
     void keyPressed(int key);
     string getName();
 
-    static const int MAX_SYNTH = 8;
+    static const int MAX_SYNTH = 6;
     deque<ShaderParams> shaderParams;
     int col[MAX_SYNTH];
     float freq[MAX_SYNTH];

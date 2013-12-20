@@ -16,14 +16,11 @@ void ColorSphere::setup(){
 }
 
 void ColorSphere::update(){
+    /*
     for (int i = 0; i < shaderParams.size(); i++) {
         cout << shaderParams[i].amp << ", ";
     }
     cout << endl;
-    /*
-     if(shaderParams.size() > 0 && shaderParams[shaderParams.size()-1].amp < 1.0){
-     shaderParams[shaderParams.size()-1].amp += 0.001;
-     }
      */
 }
 
@@ -81,7 +78,7 @@ void ColorSphere::mouseReleased(int x, int y, int button){
     shaderParams.size() % 2 == 0 ? dir = 1.0 : dir = -1.0;
     ShaderParams sd;
     sd.col = counter % 3;
-    sd.freq = powf(ofMap(y, 0, ofGetHeight(), 16, 1), 2.0);
+    sd.freq = powf(ofMap(y, 0, ofGetHeight(), 4, 0.1), 5.0);
     sd.phase = ofRandom(200, 500) * dir;
     sd.lfo = ofRandom(1,2);
     sd.amp = 0.0;
