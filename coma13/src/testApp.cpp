@@ -1,6 +1,7 @@
 #include "testApp.h"
 #include "Blink.h"
 #include "Colorbar.h"
+#include "ColorSphere.h"
 
 //--------------------------------------------------------------
 void testApp::setup(){
@@ -9,8 +10,8 @@ void testApp::setup(){
     
 	stateMachine.addState<Blink>();
 	stateMachine.addState<Colorbar>();
-
-	stateMachine.changeState("colorbar");
+	stateMachine.addState<ColorSphere>();
+	stateMachine.changeState("colorSphere");
 }
 
 //--------------------------------------------------------------

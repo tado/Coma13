@@ -96,7 +96,7 @@ void Colorbar::mouseReleased(int x, int y, int button){
     }
     float amp = ofMap(dist, 0.0, 100.0, 0.0, 0.3);
     int note  = int(ofMap(drawPos.y, 0, ofGetHeight(), 85, 1));
-    float sfreq = 20 + 5 * pow((13.0/12.0), note);
+    float sfreq = 50 + 10 * pow((13.0/12.0), note);
     float pan = ofMap(x, 0, ofGetWidth(), -1.0, 1.0);
     ofxSCSynth *s = new ofxSCSynth("col_sine");
     s->create();

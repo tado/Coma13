@@ -1,14 +1,16 @@
-/*
 (
+/*
+
 SynthDef("col_fx", {
 	var in, out;
 	in = In.ar(3, 2);
-	12.do({ in = AllpassL.ar(in, 0.1, LFNoise2.kr([rrand(0.01, 0.1),rrand(0.01, 0.1)], 0.04, 0.08), 1.0) });
+	20.do({ in = AllpassL.ar(in, 0.1, LFNoise2.kr([rrand(0.01, 0.1),rrand(0.01, 0.1)], 0.04, 0.08), 1.0) });
 	in = GVerb.ar(in, 100, 1, drylevel:0.5);
 	out = (in*0.75).softclip;
-	Out.ar(0, out);
+	out = in;
+	ReplaceOut.ar(0, in);
 }).store;
-*/
+
 (
 // define a simple reverb.
 SynthDef("col_fx", {
@@ -16,6 +18,16 @@ SynthDef("col_fx", {
 	in = In.ar(3, 2);
 	4.do({ in = AllpassN.ar(in, 0.05, [0.05.rand, 0.05.rand], 2); });
 	ReplaceOut.ar(0, in);
+}).store;
+*/
+
+SynthDef("col_fx", {
+var s, z, y;
+	s = In.ar(3, 2);
+	z = DelayN.ar(s, 0.048);
+	y = Mix.ar(Array.fill(7,{ CombL.ar(z, 0.1, LFNoise1.kr(0.1.rand, 0.04, 0.06), 6) }));
+	4.do({ y = AllpassN.ar(y, 0.050, [0.050.rand, 0.050.rand], 1) });
+	Out.ar(0,(s+(0.2*y)).softclip);
 }).store;
 
 
@@ -29,7 +41,7 @@ SynthDef("col_sine", {
 	mix = Pan2.ar(SinOsc.ar(freq,0,amp*lfo),pan) * env;
 	//2.do({mix = AllpassL.ar(mix, 0.1, LFNoise2.kr([rrand(0.01, 0.1),rrand(0.01, 0.1)], 0.04, 0.08), 0.2) });
 	mix = AllpassL.ar(mix, 0.1, LFNoise2.kr([rrand(0.01, 0.1),rrand(0.01, 0.1)], 0.04, 0.08), 1.0);
-	mix = mix * EnvGen.kr(Env.adsr(releaseTime:10), gate, doneAction: 2);
+	mix = mix * EnvGen.kr(Env.adsr(releaseTime:1), gate, doneAction: 2);
 	Out.ar(0, mix);
 	Out.ar(3, mix);
 }).store;
