@@ -1,13 +1,15 @@
 #include "testApp.h"
 #include "ColorSphere.h"
+#include "Waves.h"
 
 //--------------------------------------------------------------
 void testApp::setup(){
     //ofSetVerticalSync(true);
-    ofxSuperColliderServer::init(57110, 192000);
+    ofxSuperColliderServer::init(57110, 96000);
     
 	stateMachine.addState<ColorSphere>();
-	stateMachine.changeState("colorSphere");
+    stateMachine.addState<Waves>();
+	stateMachine.changeState("waves");
 }
 
 //--------------------------------------------------------------

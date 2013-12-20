@@ -15,6 +15,8 @@
 		18A424D918632E1400D44302 /* libscsynth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A423DA18632E1300D44302 /* libscsynth.a */; };
 		18A424DA18632E1400D44302 /* libsndfile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A423DB18632E1300D44302 /* libsndfile.a */; };
 		18A424DB18632E1400D44302 /* ofxSuperColliderServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18A423DD18632E1400D44302 /* ofxSuperColliderServer.cpp */; };
+		18C5C6EF1864774100C07897 /* waves.frag in Sources */ = {isa = PBXBuildFile; fileRef = 18C5C6EE1864774100C07897 /* waves.frag */; };
+		18C5C6F2186484EF00C07897 /* Waves.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18C5C6F0186484EF00C07897 /* Waves.cpp */; };
 		18CB16E9947C4281DF428573 /* ofxSCResourceAllocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B1C2C9AD397A02F5E8FE538 /* ofxSCResourceAllocator.cpp */; };
 		28090DEB5109115003E8F1C5 /* UdpSocketWin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5928AA323F5C2690B06C837D /* UdpSocketWin.cpp */; };
 		4ADB88E2FB52E76A471065DE /* ofxOscParameterSync.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0AED834CE4DEC5260AF302A2 /* ofxOscParameterSync.cpp */; };
@@ -178,6 +180,9 @@
 		18A423DB18632E1300D44302 /* libsndfile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsndfile.a; sourceTree = "<group>"; };
 		18A423DD18632E1400D44302 /* ofxSuperColliderServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxSuperColliderServer.cpp; sourceTree = "<group>"; };
 		18A423DE18632E1400D44302 /* ofxSuperColliderServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSuperColliderServer.h; sourceTree = "<group>"; };
+		18C5C6EE1864774100C07897 /* waves.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = waves.frag; path = bin/data/waves.frag; sourceTree = SOURCE_ROOT; };
+		18C5C6F0186484EF00C07897 /* Waves.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Waves.cpp; sourceTree = "<group>"; };
+		18C5C6F1186484EF00C07897 /* Waves.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Waves.h; sourceTree = "<group>"; };
 		19A1B0EF2618781672DD9B5F /* ofxSCServer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxSCServer.h; path = ../../../addons/ofxSuperCollider/src/ofxSCServer.h; sourceTree = SOURCE_ROOT; };
 		1AC00787E75DAD0FF1652A29 /* ofxSCBuffer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxSCBuffer.h; path = ../../../addons/ofxSuperCollider/src/ofxSCBuffer.h; sourceTree = SOURCE_ROOT; };
 		1C8346E1B47F16C3D9F591A5 /* ofxSCBuffer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxSCBuffer.cpp; path = ../../../addons/ofxSuperCollider/src/ofxSCBuffer.cpp; sourceTree = SOURCE_ROOT; };
@@ -288,6 +293,9 @@
 				186C9EE81864343000E8A196 /* ColorSphere.cpp */,
 				186C9EED18643A4800E8A196 /* colorSphere.frag */,
 				186C9EEE18643A4800E8A196 /* colorSphere.vert */,
+				18C5C6F1186484EF00C07897 /* Waves.h */,
+				18C5C6F0186484EF00C07897 /* Waves.cpp */,
+				18C5C6EE1864774100C07897 /* waves.frag */,
 			);
 			name = States;
 			sourceTree = "<group>";
@@ -797,8 +805,10 @@
 			files = (
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* testApp.cpp in Sources */,
+				18C5C6EF1864774100C07897 /* waves.frag in Sources */,
 				72A929D3561B8232A182ABFC /* ofxOscBundle.cpp in Sources */,
 				5864AD82E20F15536D054EA3 /* ofxOscMessage.cpp in Sources */,
+				18C5C6F2186484EF00C07897 /* Waves.cpp in Sources */,
 				4ADB88E2FB52E76A471065DE /* ofxOscParameterSync.cpp in Sources */,
 				186C9EF018643A4800E8A196 /* colorSphere.vert in Sources */,
 				640279EE111671BD026CB013 /* ofxOscReceiver.cpp in Sources */,

@@ -91,8 +91,8 @@ void ColorSphere::mouseReleased(int x, int y, int button){
     float dir;
     shaderParams.size() % 2 == 0 ? dir = 1.0 : dir = -1.0;
     ShaderParams sd;
-    sd.col = counter % 3;
-    sd.freq = powf(ofMap(y, 0, ofGetHeight(), 4, 0.1), 5.0);
+    sd.col = counter % 4;
+    sd.freq = powf(ofMap(y, 0, ofGetHeight(), 4, 0.5), 5.0);
     sd.phase = ofRandom(200, 500) * dir;
     sd.lfo = ofRandom(1,2);
     sd.amp = 0.0;
@@ -104,8 +104,9 @@ void ColorSphere::mouseReleased(int x, int y, int button){
     }
     float amp = ofMap(dist, 0.0, 100.0, 0.0, 0.3);
     int note  = int(ofMap(drawPos.y, 0, ofGetHeight(), 85, 1));
-    float freq = 50 + 10 * pow((13.0/12.0), note);
-    float pan = ofMap(x, 0, ofGetWidth(), -1.0, 1.0);
+    float freq = 50 + 20 * pow((13.0/12.0), note);
+    //float pan = ofMap(x, 0, ofGetWidth(), -1.0, 1.0);
+    float pan = ofRandom(-0.5, 0.5);
     sd.synth = new ofxSCSynth("col_sine");
     sd.synth->create();
     sd.synth->set("gate", 1);
