@@ -5,7 +5,7 @@
 //--------------------------------------------------------------
 void testApp::setup(){
     //ofSetVerticalSync(true);
-    ofxSuperColliderServer::init();
+    ofxSuperColliderServer::init(57110, 192000);
     
 	stateMachine.addState<Blink>();
 	stateMachine.addState<Colorbar>();

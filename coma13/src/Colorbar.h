@@ -34,4 +34,6 @@ class Colorbar : public itg::ofxState<> {
     //ofxSCSynth *synth;
     ofVec2f drawPos;
     bool bMousePressed;
+    
+    ofSpherePrimitive sphere;
 };

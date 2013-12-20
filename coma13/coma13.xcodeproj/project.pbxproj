@@ -13,6 +13,7 @@
 		18535D231861E0B4004E2842 /* colorbar.frag in Sources */ = {isa = PBXBuildFile; fileRef = 18535D221861E0B4004E2842 /* colorbar.frag */; };
 		185622D718606B94005484FB /* Blink.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 185622D518606B94005484FB /* Blink.cpp */; };
 		185622DC18607DAB005484FB /* blink.frag in Sources */ = {isa = PBXBuildFile; fileRef = 185622DB18607DAB005484FB /* blink.frag */; };
+		186C9EE61864107700E8A196 /* colorbar.vert in Sources */ = {isa = PBXBuildFile; fileRef = 186C9EE51864107700E8A196 /* colorbar.vert */; };
 		18A424D918632E1400D44302 /* libscsynth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A423DA18632E1300D44302 /* libscsynth.a */; };
 		18A424DA18632E1400D44302 /* libsndfile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A423DB18632E1300D44302 /* libsndfile.a */; };
 		18A424DB18632E1400D44302 /* ofxSuperColliderServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18A423DD18632E1400D44302 /* ofxSuperColliderServer.cpp */; };
@@ -107,6 +108,7 @@
 		185622D618606B94005484FB /* Blink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Blink.h; sourceTree = "<group>"; };
 		185622D918606DA2005484FB /* SharedData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedData.h; sourceTree = "<group>"; };
 		185622DB18607DAB005484FB /* blink.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = blink.frag; path = bin/data/blink.frag; sourceTree = SOURCE_ROOT; };
+		186C9EE51864107700E8A196 /* colorbar.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = colorbar.vert; path = bin/data/colorbar.vert; sourceTree = SOURCE_ROOT; };
 		18A4109518632E0800D44302 /* scsynth.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = scsynth.xcodeproj; sourceTree = "<group>"; };
 		18A4109818632E0800D44302 /* SuperCollider-3.4-Source.tar.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = "SuperCollider-3.4-Source.tar.gz"; sourceTree = "<group>"; };
 		18A4239318632E1300D44302 /* dfftlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dfftlib.h; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				18535D201861E00D004E2842 /* Colorbar.h */,
 				18535D1F1861E00D004E2842 /* Colorbar.cpp */,
 				18535D221861E0B4004E2842 /* colorbar.frag */,
+				186C9EE51864107700E8A196 /* colorbar.vert */,
 			);
 			name = States;
 			sourceTree = "<group>";
@@ -815,6 +818,7 @@
 				28090DEB5109115003E8F1C5 /* UdpSocketWin.cpp in Sources */,
 				62545D179C94265CA1389D4A /* OscOutboundPacketStream.cpp in Sources */,
 				C4782ECC372420ACE0615B74 /* OscPrintReceivedElements.cpp in Sources */,
+				186C9EE61864107700E8A196 /* colorbar.vert in Sources */,
 				0546D1A38E13BD319CC9755B /* OscReceivedElements.cpp in Sources */,
 				879A251454401BC0B6E4F238 /* OscTypes.cpp in Sources */,
 				185622DC18607DAB005484FB /* blink.frag in Sources */,

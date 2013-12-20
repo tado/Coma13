@@ -2,6 +2,8 @@
 precision mediump float;
 #endif
 
+varying vec4 position;
+
 uniform float time;
 uniform vec2 mouse;
 uniform vec2 resolution;
@@ -17,22 +19,22 @@ float rand(vec2 co){
 }
 
 void main( void ) {
-    vec2 position = ( gl_FragCoord.xy / resolution.xy );
+    //vec2 position = ( gl_FragCoord.xy / resolution.xy );
     vec3 color = vec3(0.0);
     
     for (int i = 0; i < num; i++) {
         float n = mod(float(i), 3.0);
         float l = sin(time * lfo[i]) * 0.5 + 0.5;
         if (n == 0.0) {
-            float p = sin( position.x * freq[i] / 10.0 + time * phase[i]) * amp[i] * l;
+            float p = sin( position.x * freq[i] / 1000.0 + time * phase[i]) * amp[i] * l;
             color.b += p; color.g += p * 0.75; color.r += p * 0.33;
         }
         if (n == 1.0) {
-            float p = sin( position.x * freq[i] / 10.0 + time * phase[i]) * amp[i] * l;
+            float p = sin( position.x * freq[i] / 1000.0 + time * phase[i]) * amp[i] * l;
             color.b += p * 0.75; color.g += p; color.r += p * 0.33;
         }
         if (n == 2.0) {
-            float p = sin( position.x * freq[i] / 10.0 + time * phase[i]) * amp[i] * l;
+            float p = sin( position.x * freq[i] / 1000.0 + time * phase[i]) * amp[i] * l;
             color.b += p * 0.75; color.g += p * 0.75; color.r += p;
         }
     }

@@ -14,11 +14,6 @@ void Colorbar::setup(){
     float* phase = &dphase[0];
     float* lfo = &dlfo[0];
     float* amp = &damp[0];
-    //check array
-    for (int i = 0; i < NUM; i++) {
-        cout << freq[i] << ", ";
-    }
-    
     counter = 0;
     
     fx = new ofxSCSynth("col_fx");
@@ -43,8 +38,18 @@ void Colorbar::draw(){
     shader.setUniform1fv("amp", amp, NUM);
     shader.setUniform1fv("lfo", lfo, NUM);
     
+    ofEnableBlendMode(OF_BLENDMODE_ADD);
+    //ofEnableDepthTest();
+    //ofRect(0, 0, ofGetWidth(), ofGetHeight());
+    ofPushMatrix();
+    ofTranslate(ofGetWidth()/2, ofGetHeight()/2, -ofGetWidth()/6.0);
+    ofRotateX(ofGetElapsedTimef() * 5);
+    ofRotateY(ofGetElapsedTimef() * 7);
+    sphere.set(ofGetWidth()/2, 128);
+    sphere.draw();
+    ofPopMatrix();
+    //ofDisableDepthTest();
     
-    ofRect(0, 0, ofGetWidth(), ofGetHeight());
     shader.end();
     fbo.end();
     
@@ -61,8 +66,6 @@ void Colorbar::mousePressed(int x, int y, int button){
 
 void Colorbar::mouseReleased(int x, int y, int button){
     //GLSL
-    //if (counter < NUM) {
-    
     float dir;
     if (counter % 2 == 0) {
         dir = 1.0;
@@ -70,9 +73,9 @@ void Colorbar::mouseReleased(int x, int y, int button){
         dir = -1.0;
     }
     
-    dfreq.push_back(powf(ofMap(y, 0, ofGetHeight(), 10, 0.1), 5.0));
+    dfreq.push_back(powf(ofMap(y, 0, ofGetHeight(), 16, 1), 2.0));
     dfreq.pop_front();
-    dphase.push_back(ofRandom(40, 50) * dir);
+    dphase.push_back(ofRandom(200, 500) * dir);
     dphase.pop_front();
     dlfo.push_back(ofRandom(1,2));
     dlfo.pop_front();
@@ -93,7 +96,7 @@ void Colorbar::mouseReleased(int x, int y, int button){
     }
     float amp = ofMap(dist, 0.0, 100.0, 0.0, 0.3);
     int note  = int(ofMap(drawPos.y, 0, ofGetHeight(), 85, 1));
-    float sfreq = 20 + 20 * pow((13.0/12.0), note);
+    float sfreq = 20 + 5 * pow((13.0/12.0), note);
     float pan = ofMap(x, 0, ofGetWidth(), -1.0, 1.0);
     ofxSCSynth *s = new ofxSCSynth("col_sine");
     s->create();
@@ -103,13 +106,6 @@ void Colorbar::mouseReleased(int x, int y, int button){
     s->set("pan", pan);
     s->set("amp", amp);
     synth.push_back(s);
-    
-    //}
-    
-    for (int i = 0; i < NUM; i++) {
-        cout << freq[i] << ", ";
-    }
-    cout << endl;
 }
 
 void Colorbar::keyPressed(int key){
@@ -127,21 +123,11 @@ void Colorbar::keyPressed(int key){
             synth.pop_back();
         }
         
-        cout << "synth:" << endl;
-        for (int i = 0; i < synth.size(); i++) {
-            cout << synth[i] << ", ";
-        }
-        cout << endl;
-        
         std::copy(dfreq.begin(), dfreq.end(), freq);
         std::copy(dphase.begin(), dphase.end(), phase);
         std::copy(dlfo.begin(), dlfo.end(), lfo);
         std::copy(damp.begin(), damp.end(), amp);
         
-        //check array
-        for (int i = 0; i < NUM; i++) {
-            cout << freq[i] << ", ";
-        }
     }
 
 }
