@@ -6,21 +6,26 @@ void ColorSphere::setup(){
     fx = new ofxSCSynth("col_fx");
     fx->create();
     
-     for (int i = 0; i < shaderParams.size(); i++) {
-         col[i] = 0;
-         freq[i] = 0;
-         phase[i] = 0;
-         amp[i] = 0;
-         lfo[i] = 0;
-     }
+    for (int i = 0; i < MAX_SYNTH; i++) {
+        col[i] = 0;
+        freq[i] = 0;
+        phase[i] = 0;
+        amp[i] = 0;
+        lfo[i] = 0;
+        shaderParams[i].col = 0;
+        shaderParams[i].freq = 0.0;
+        shaderParams[i].phase = 0.0;
+        shaderParams[i].lfo = 0.0;
+        shaderParams[i].amp = 0.0;
+    }
 }
 
 void ColorSphere::update(){
     /*
-    for (int i = 0; i < shaderParams.size(); i++) {
-        cout << shaderParams[i].amp << ", ";
-    }
-    cout << endl;
+     for (int i = 0; i < shaderParams.size(); i++) {
+     cout << shaderParams[i].amp << ", ";
+     }
+     cout << endl;
      */
 }
 
@@ -37,6 +42,9 @@ void ColorSphere::draw(){
         lfo[i] = shaderParams[i].lfo;
         if(shaderParams[i].amp < 1.0){
             shaderParams[i].amp += 0.01;
+            if(shaderParams[i].amp > 1.0){
+                shaderParams[i].amp  = 1.0;
+            }
         }
         amp[i] = shaderParams[i].amp;
     }
@@ -54,7 +62,7 @@ void ColorSphere::draw(){
         
         ofEnableBlendMode(OF_BLENDMODE_ADD);
         ofPushMatrix();
-        ofTranslate(ofGetWidth()/2, ofGetHeight()/2, -ofGetWidth()/6.0);
+        ofTranslate(ofGetWidth()/2, ofGetHeight()/2, -ofGetWidth()/8.0);
         ofRotateX(ofGetElapsedTimef() * 5);
         ofRotateY(ofGetElapsedTimef() * 7);
         sphere.set(ofGetWidth()/2, 128);
