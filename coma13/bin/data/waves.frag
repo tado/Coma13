@@ -24,6 +24,8 @@ void main() {
     
     xpos = (gl_FragCoord.x / resolution.x);
     ypos = (gl_FragCoord.y / resolution.y);
+    //xpos = 4.0;
+    //ypos = 4.0;
     
     x = xpos;
     for (float i = 0.0; i < num; i += 1.0) {

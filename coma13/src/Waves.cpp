@@ -1,7 +1,9 @@
 #include "Waves.h"
 
 void Waves::setup(){
-
+    width = 640;
+    height = 480;
+    fbo.allocate(width,height);
 }
 
 void Waves::stateEnter(){
@@ -47,8 +49,7 @@ void Waves::update(){
 void Waves::draw(){
     ofBackground(0);
     float time = ofGetElapsedTimef();
-    float resolution[] = {ofGetWidth(), ofGetHeight()};
-    
+    float resolution[] = {width, height};
     fbo.begin();
     shader.begin();
     shader.setUniform1f("time", time);
@@ -59,6 +60,7 @@ void Waves::draw(){
     ofRect(0, 0, ofGetWidth(), ofGetHeight());
     shader.end();
     fbo.end();
+    fbo.draw(0, ofGetHeight(), ofGetWidth(), -ofGetHeight());
 }
 
 void Waves::mousePressed(int x, int y, int button){

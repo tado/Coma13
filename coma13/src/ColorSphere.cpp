@@ -95,7 +95,7 @@ void ColorSphere::draw(){
     fbo.end();
     
     //Glitch!!
-    float gscale = (ofGetElapsedTimef() - glitchStartTime) * 1.5;
+    float gscale = (ofGetElapsedTimef() - glitchStartTime) * 1.0;
     if (gscale > 255) {
         gscale = 255;
     }
@@ -103,14 +103,14 @@ void ColorSphere::draw(){
         ofSetColor(255,gscale);
         fbo2.allocate(ofRandom(500,1500),ofRandom(500,1500));
         fbo2.draw(0, 0, ofGetWidth(), ofGetHeight());
-        float lpf = ofMap(gscale, 0, 255, 0, 400) + 10;
-        float gain = ofMap(gscale, 0, 255, 0.0, 2.0);
+        float lpf = ofMap(gscale, 0, 255, 0, 1200) + 10;
+        float gain = ofMap(gscale, 0, 255, 0.0, 1.0);
         glitchSynth->set("lpf", lpf);
         glitchSynth->set("gain", gain);
     }
     if(drawPulse){
         //Pulse!!
-        float pscale = (ofGetElapsedTimef() - pulseStartTime) * 3.0;
+        float pscale = (ofGetElapsedTimef() - pulseStartTime) * 2.0;
         if (pscale > 255) {
             pscale = 255;
         }
@@ -188,7 +188,7 @@ void ColorSphere::keyPressed(int key){
         drawPulse = true;
         pluseSynth = new ofxSCSynth("col_sawbass");
         pluseSynth->set("lpf", 10);
-        pluseSynth->set("amp", 0.8);
+        pluseSynth->set("amp", 0.7);
         pluseSynth->create();
         pulseStartTime = ofGetElapsedTimef();
     }

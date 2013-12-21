@@ -91,7 +91,7 @@ SynthDef("col_harmony", {
 	//out = RLPF.ar(out, lpf, rq);
 	//out = (out*gain).clip2*amp;
 	//out = (out*gain)*amp;
-	CompanderD.ar(out*gain) * amp;
+	out = CompanderD.ar(out*gain) * amp;
 	w = out;
 	mod = out * Decay2.ar(pul, atk, rel);
 	out = (mod * modMix) + (out * (1-modMix));
@@ -99,8 +99,8 @@ SynthDef("col_harmony", {
 	out = (out * (fx - 1.0)) + (w * fx) * EnvGen.kr(Env.new([0,1], [30], 'sine'));
 	out = out * EnvGen.kr(Env.adsr(releaseTime:10), gate, doneAction: 2);
 	//out = PanAz.ar(8, out.at(0), LFSaw.kr(1.0)) + PanAz.ar(8, out.at(1), LFSaw.kr(1.5)) ;
-	Out.ar(0, out * 0.75);
-	Out.ar(3, out * 0.75);
+	Out.ar(0, out * 0.65);
+	Out.ar(3, out * 0.65);
 }).store;
 
 SynthDef("col_sawbass", {
