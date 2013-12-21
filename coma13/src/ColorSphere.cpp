@@ -1,6 +1,10 @@
 #include "ColorSphere.h"
 
 void ColorSphere::setup(){
+
+}
+
+void ColorSphere::stateEnter(){
     shader.load("colorSphere");
     counter = 0;
     fx = new ofxSCSynth("col_fx");
@@ -18,6 +22,10 @@ void ColorSphere::setup(){
         shaderParams[i].lfo = 0.0;
         shaderParams[i].amp = 0.0;
     }
+}
+
+void ColorSphere::stateExit(){
+    shader.unload();
 }
 
 void ColorSphere::update(){
@@ -68,7 +76,7 @@ void ColorSphere::draw(){
         
         ofEnableBlendMode(OF_BLENDMODE_ADD);
         ofPushMatrix();
-        ofTranslate(ofGetWidth()/2, ofGetHeight()/2, -ofGetWidth()/8.0);
+        ofTranslate(ofGetWidth()/2, ofGetHeight()/2, -ofGetWidth()/15.0);
         ofRotateX(ofGetElapsedTimef() * 5);
         ofRotateY(ofGetElapsedTimef() * 7);
         sphere.set(ofGetWidth()/2, 128);

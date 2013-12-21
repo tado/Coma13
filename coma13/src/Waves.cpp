@@ -1,6 +1,10 @@
 #include "Waves.h"
 
 void Waves::setup(){
+
+}
+
+void Waves::stateEnter(){
     shader.load("waves");
     counter = 0;
     level = 0;
@@ -10,12 +14,29 @@ void Waves::setup(){
     
     fx = new ofxSCSynth("col_closefx");
     fx->create();
+    fadeout = false;
+    fadeCount = 0;
 }
+
+void Waves::stateExit(){
+    fx->free();
+    shader.unload();
+}
+
 void Waves::update(){
-    for (int i = 0; i < counter; i++) {
-        amp[i] += 0.001;
-        if(amp[i] > 1.0){
-            amp[i] = 1.0;
+    if(!fadeout){
+        for (int i = 0; i < counter; i++) {
+            amp[i] += 0.001;
+            if(amp[i] > 1.0){
+                amp[i] = 1.0;
+            }
+        }
+    } else {
+        for (int i = 0; i < fadeCount; i++) {
+            amp[i] -= 0.001;
+            if(amp[i] < 0.0){
+                amp[i] = 0.0;
+            }
         }
     }
 }
@@ -45,11 +66,13 @@ void Waves::mouseReleased(int x, int y, int button){
 void Waves::keyPressed(int key){
     if (key == 'a') {
         counter++;
+        fadeout = false;
         level = 0.0;
         
         WaveParams w;
         w.synth = new ofxSCSynth("col_closesaw");
         w.synth->create();
+        
         float detune = ofRandom(-0.15, 0.15);
         int nth = counter;
         //startTime = ofGetElapsedTimef();
@@ -61,6 +84,22 @@ void Waves::keyPressed(int key){
         w.synth->set("detune", detune);
         w.synth->create();
         waveParams.push_back(w);
+    }
+    if (key == 'd') {
+        if(counter - fadeCount > 0){
+            cout << "node ID = " << waveParams[fadeCount].synth->nodeID << endl;
+            if (waveParams[fadeCount].synth->nodeID < 3000 && waveParams[fadeCount].synth->nodeID > 2000) {
+                waveParams[fadeCount].synth->free();
+            }
+            fadeCount++;
+            if (fadeCount < 0) {
+                fadeCount = 0;
+            }
+            fadeout = true;
+        }
+    }
+    if (key == 's') {
+        waveParams[0].synth->free();
     }
 }
 string Waves::getName(){

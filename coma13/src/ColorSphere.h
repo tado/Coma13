@@ -13,6 +13,8 @@ public:
 };
 
 class ColorSphere : public itg::ofxState<> {
+    void stateEnter();
+    void stateExit();
     void setup();
     void update();
     void draw();

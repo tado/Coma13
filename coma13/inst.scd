@@ -151,7 +151,7 @@ SynthDef("col_closesaw", {
 	+ Saw.ar([base*harm+detune.rand, base*harm+detune.rand] * (ratio ** n)) * amp;
 	out = out * env;
 	out = RLPF.ar(out, lfo * (1.5 ** n), rq).clip2 * 0.5;
-	out = out * EnvGen.kr(Env.adsr(releaseTime:10), gate, doneAction: 2);
+	out = out * EnvGen.kr(Env.adsr(releaseTime:20), gate, doneAction: 2);
 	Out.ar(5, out);
 }).store;
 

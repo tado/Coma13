@@ -29,6 +29,12 @@ void testApp::keyPressed(int key){
             ofToggleFullscreen();
             break;
             
+        case 'q':
+            stateMachine.changeState("colorSphere");
+            break;
+        case 'w':
+            stateMachine.changeState("waves");
+            break;
         default:
             break;
     }

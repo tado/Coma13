@@ -10,6 +10,8 @@ public:
 
 class Waves : public itg::ofxState<> {
     void setup();
+    void stateEnter();
+    void stateExit();
     void update();
     void draw();
     void mousePressed(int x, int y, int button);
@@ -20,6 +22,8 @@ class Waves : public itg::ofxState<> {
     static const int MAX = 20;
     deque<WaveParams> waveParams;
     int counter;
+    int fadeCount;
+    bool fadeout;
     float level;
     float amp[MAX];
     
