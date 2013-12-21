@@ -20,6 +20,10 @@ void Waves::stateEnter(){
 
 void Waves::stateExit(){
     fx->free();
+    for(int i = 0; i < waveParams.size(); i++){
+        waveParams[i].synth->set("gate", 0);
+    }
+    waveParams.clear();
     shader.unload();
 }
 
@@ -88,9 +92,9 @@ void Waves::keyPressed(int key){
     if (key == 'd') {
         if(counter - fadeCount > 0){
             cout << "node ID = " << waveParams[fadeCount].synth->nodeID << endl;
-            if (waveParams[fadeCount].synth->nodeID < 3000 && waveParams[fadeCount].synth->nodeID > 2000) {
-                waveParams[fadeCount].synth->free();
-            }
+            //if (waveParams[fadeCount].synth->nodeID < 3000 && waveParams[fadeCount].synth->nodeID > 2000) {
+            waveParams[fadeCount].synth->set("gate", 0);
+            //}
             fadeCount++;
             if (fadeCount < 0) {
                 fadeCount = 0;

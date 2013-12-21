@@ -25,6 +25,11 @@ void ColorSphere::stateEnter(){
 }
 
 void ColorSphere::stateExit(){
+    fx->free();
+    for(int i = 0; i < shaderParams.size(); i++){
+        shaderParams[i].synth->set("gate", 0);
+    }
+    shaderParams.clear();
     shader.unload();
 }
 
