@@ -41,4 +41,9 @@ class ColorSphere : public itg::ofxState<> {
     bool bMousePressed;
     
     ofSpherePrimitive sphere;
+    
+    bool drawGlitch;
+    float glitchStartTime;
+    ofFbo fbo2;
+    ofxSCSynth *glitchSynth;
 };

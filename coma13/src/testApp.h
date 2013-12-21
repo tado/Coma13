@@ -24,4 +24,5 @@ public:
     void gotMessage(ofMessage msg);
     
     itg::ofxStateMachine<> stateMachine;
+    ofFbo fbo;
 };

@@ -1,7 +1,7 @@
 #include "ColorSphere.h"
 
 void ColorSphere::setup(){
-
+    
 }
 
 void ColorSphere::stateEnter(){
@@ -22,10 +22,12 @@ void ColorSphere::stateEnter(){
         shaderParams[i].lfo = 0.0;
         shaderParams[i].amp = 0.0;
     }
+    drawGlitch = false;
 }
 
 void ColorSphere::stateExit(){
     fx->free();
+    glitchSynth->free();
     for(int i = 0; i < shaderParams.size(); i++){
         shaderParams[i].synth->set("gate", 0);
     }
@@ -68,29 +70,44 @@ void ColorSphere::draw(){
         amp[i] = shaderParams[i].amp;
     }
     
-    //if(shaderParams.size() > 0){
-        fbo.begin();
-        shader.begin();
-        shader.setUniform1f("time", time);
-        shader.setUniform2fv("resolution", resolution);
-        shader.setUniform1iv("col", col, MAX_SYNTH);
-        shader.setUniform1fv("freq", freq, MAX_SYNTH);
-        shader.setUniform1fv("phase", phase, MAX_SYNTH);
-        shader.setUniform1fv("amp", amp, MAX_SYNTH);
-        shader.setUniform1fv("lfo", lfo, MAX_SYNTH);
-        
-        ofEnableBlendMode(OF_BLENDMODE_ADD);
-        ofPushMatrix();
-        ofTranslate(ofGetWidth()/2, ofGetHeight()/2, -ofGetWidth()/15.0);
-        ofRotateX(ofGetElapsedTimef() * 5);
-        ofRotateY(ofGetElapsedTimef() * 7);
-        sphere.set(ofGetWidth()/2, 128);
-        sphere.draw();
-        ofPopMatrix();
-        ofDisableBlendMode();
-        shader.end();
-        fbo.end();
-    //}
+    
+    fbo.begin();
+    shader.begin();
+    shader.setUniform1f("time", time);
+    shader.setUniform2fv("resolution", resolution);
+    shader.setUniform1iv("col", col, MAX_SYNTH);
+    shader.setUniform1fv("freq", freq, MAX_SYNTH);
+    shader.setUniform1fv("phase", phase, MAX_SYNTH);
+    shader.setUniform1fv("amp", amp, MAX_SYNTH);
+    shader.setUniform1fv("lfo", lfo, MAX_SYNTH);
+    
+    ofEnableBlendMode(OF_BLENDMODE_ADD);
+    ofPushMatrix();
+    ofTranslate(ofGetWidth()/2, ofGetHeight()/2, -ofGetWidth()/15.0);
+    ofRotateX(ofGetElapsedTimef() * 5);
+    ofRotateY(ofGetElapsedTimef() * 7);
+    sphere.set(ofGetWidth()/2, 128);
+    sphere.draw();
+    ofPopMatrix();
+    shader.end();
+    fbo.end();
+
+    //Glitch!!
+    float gscale = (ofGetElapsedTimef() - glitchStartTime) * 1.0;
+    if (gscale > 255) {
+        gscale = 255;
+    }
+    if(drawGlitch) {
+        ofSetColor(255,gscale);
+        fbo2.allocate(ofRandom(500,1500),ofRandom(500,1500));
+        fbo2.draw(ofGetWidth(), ofGetHeight(), -ofGetWidth(), -ofGetHeight());
+        float lpf = ofMap(gscale, 0, 255, 0, 1000) + 10;
+        float gain = ofMap(gscale, 0, 255, 1.0, 5.0);
+        glitchSynth->set("lpf", lpf);
+        glitchSynth->set("gain", gain);
+    }
+
+    ofDisableBlendMode();
 }
 
 void ColorSphere::mousePressed(int x, int y, int button){
@@ -143,6 +160,13 @@ void ColorSphere::keyPressed(int key){
             shaderParams[0].synth->set("gate", 0);
             shaderParams.pop_front();
         }
+    }
+    if (key == 'g') {
+        drawGlitch = true;
+        glitchStartTime = ofGetElapsedTimef();
+        glitchSynth = new ofxSCSynth("col_harmony");
+        glitchSynth->create();
+        glitchSynth->set("lpf", 10);
     }
 }
 
