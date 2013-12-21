@@ -89,7 +89,9 @@ SynthDef("col_harmony", {
 				lpf * Latch.ar(1.0 + BrownNoise.ar(0.5, 0.6), Impulse.ar(modSpeed)),
 				Latch.ar(BrownNoise.ar(1.2, 1.3), Impulse.ar(modSpeed)));
 	//out = RLPF.ar(out, lpf, rq);
-	out = (out*gain).clip2*amp;
+	//out = (out*gain).clip2*amp;
+	//out = (out*gain)*amp;
+	CompanderD.ar(out*gain) * amp;
 	w = out;
 	mod = out * Decay2.ar(pul, atk, rel);
 	out = (mod * modMix) + (out * (1-modMix));
@@ -97,8 +99,8 @@ SynthDef("col_harmony", {
 	out = (out * (fx - 1.0)) + (w * fx) * EnvGen.kr(Env.new([0,1], [30], 'sine'));
 	out = out * EnvGen.kr(Env.adsr(releaseTime:10), gate, doneAction: 2);
 	//out = PanAz.ar(8, out.at(0), LFSaw.kr(1.0)) + PanAz.ar(8, out.at(1), LFSaw.kr(1.5)) ;
-	Out.ar(0, out * 0.5);
-	Out.ar(3, out * 0.5);
+	Out.ar(0, out * 0.75);
+	Out.ar(3, out * 0.75);
 }).store;
 
 SynthDef("col_sawbass", {
@@ -160,7 +162,7 @@ SynthDef("col_closefx", {
 	arg lpf=440, rq=0.5, amp=0.8;
 	var in, out;
 	in = In.ar(5, 2);
-	8.do({ in = AllpassL.ar(in, 0.1, LFNoise2.kr([rrand(0.0, 0.1),rrand(0.0, 0.1)],0.01,0.06), 4.0) });
+	12.do({ in = AllpassL.ar(in, 0.1, LFNoise2.kr([rrand(0.0, 0.1),rrand(0.0, 0.1)],0.01,0.06), 4.0) });
 	out = CompanderD.ar(in) * amp;
 	Out.ar(0, out);
 	/*

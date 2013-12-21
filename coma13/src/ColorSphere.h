@@ -43,7 +43,10 @@ class ColorSphere : public itg::ofxState<> {
     ofSpherePrimitive sphere;
     
     bool drawGlitch;
+    bool drawPulse;
     float glitchStartTime;
+    float pulseStartTime;
     ofFbo fbo2;
     ofxSCSynth *glitchSynth;
+    ofxSCSynth *pluseSynth;
 };

@@ -37,7 +37,7 @@ void Waves::update(){
         }
     } else {
         for (int i = 0; i < fadeCount; i++) {
-            amp[i] -= 0.001;
+            amp[i] -= 0.005;
             if(amp[i] < 0.0){
                 amp[i] = 0.0;
             }

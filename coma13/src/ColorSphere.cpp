@@ -23,11 +23,13 @@ void ColorSphere::stateEnter(){
         shaderParams[i].amp = 0.0;
     }
     drawGlitch = false;
+    drawPulse = false;
 }
 
 void ColorSphere::stateExit(){
-    fx->free();
+    //fx->free();
     glitchSynth->free();
+    pluseSynth->free();
     for(int i = 0; i < shaderParams.size(); i++){
         shaderParams[i].synth->set("gate", 0);
     }
@@ -91,23 +93,36 @@ void ColorSphere::draw(){
     ofPopMatrix();
     shader.end();
     fbo.end();
-
+    
     //Glitch!!
-    float gscale = (ofGetElapsedTimef() - glitchStartTime) * 1.0;
+    float gscale = (ofGetElapsedTimef() - glitchStartTime) * 1.5;
     if (gscale > 255) {
         gscale = 255;
     }
     if(drawGlitch) {
         ofSetColor(255,gscale);
         fbo2.allocate(ofRandom(500,1500),ofRandom(500,1500));
-        fbo2.draw(ofGetWidth(), ofGetHeight(), -ofGetWidth(), -ofGetHeight());
-        float lpf = ofMap(gscale, 0, 255, 0, 1000) + 10;
-        float gain = ofMap(gscale, 0, 255, 1.0, 5.0);
+        fbo2.draw(0, 0, ofGetWidth(), ofGetHeight());
+        float lpf = ofMap(gscale, 0, 255, 0, 400) + 10;
+        float gain = ofMap(gscale, 0, 255, 0.0, 2.0);
         glitchSynth->set("lpf", lpf);
         glitchSynth->set("gain", gain);
     }
-
+    if(drawPulse){
+        //Pulse!!
+        float pscale = (ofGetElapsedTimef() - pulseStartTime) * 3.0;
+        if (pscale > 255) {
+            pscale = 255;
+        }
+        float lpf = ofMap(pscale, 0, 255, 0, 800) + 10;
+        pluseSynth->set("lpf", lpf);
+    
+        float gamp = ofMap(pscale, 0, 255, 1.0, 0.0);
+        glitchSynth->set("amp", gamp);
+    }
+    
     ofDisableBlendMode();
+
 }
 
 void ColorSphere::mousePressed(int x, int y, int button){
@@ -132,7 +147,7 @@ void ColorSphere::mouseReleased(int x, int y, int button){
     if (dist > 100.0) {
         dist = 100.0;
     }
-    float amp = ofMap(dist, 0.0, 100.0, 0.0, 0.3);
+    float amp = ofMap(dist, 0.0, 100.0, 0.0, 0.1);
     int note  = int(ofMap(drawPos.y, 0, ofGetHeight(), 85, 1));
     float freq = 50 + 20 * pow((13.0/12.0), note);
     //float pan = ofMap(x, 0, ofGetWidth(), -1.0, 1.0);
@@ -167,6 +182,15 @@ void ColorSphere::keyPressed(int key){
         glitchSynth = new ofxSCSynth("col_harmony");
         glitchSynth->create();
         glitchSynth->set("lpf", 10);
+        glitchSynth->set("gain", 0.0);
+    }
+    if (key == 'h') {
+        drawPulse = true;
+        pluseSynth = new ofxSCSynth("col_sawbass");
+        pluseSynth->set("lpf", 10);
+        pluseSynth->set("amp", 0.8);
+        pluseSynth->create();
+        pulseStartTime = ofGetElapsedTimef();
     }
 }
 
