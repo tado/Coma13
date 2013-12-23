@@ -6,6 +6,7 @@ void ColorSphere::setup(){
 
 void ColorSphere::stateEnter(){
     shader.load("colorSphere");
+    blinkShader.load("blink");
     counter = 0;
     fx = new ofxSCSynth("col_fx");
     fx->create();
@@ -24,6 +25,8 @@ void ColorSphere::stateEnter(){
     }
     drawGlitch = false;
     drawPulse = false;
+    sphereStartTime = ofGetElapsedTimef();
+    bComb = false;
 }
 
 void ColorSphere::stateExit(){
@@ -44,6 +47,16 @@ void ColorSphere::update(){
      }
      cout << endl;
      */
+    
+    if (bComb) {
+        float combAmp = ofMap(movePos.y, 0, ofGetHeight(), 1.0, 0.0);
+        float delay = ofMap(movePos.x, 0, ofGetWidth(), 0.001, 0.1);
+        if(delay < 0.001){
+            delay = 0.001;
+        }
+        fx->set("combAmp", combAmp);
+        fx->set("delay", delay);
+    }
 }
 
 void ColorSphere::draw(){
@@ -88,6 +101,8 @@ void ColorSphere::draw(){
     ofTranslate(ofGetWidth()/2, ofGetHeight()/2, -ofGetWidth()/15.0);
     ofRotateX(ofGetElapsedTimef() * 5);
     ofRotateY(ofGetElapsedTimef() * 7);
+    float radius = sin((ofGetElapsedTimef() - sphereStartTime) / 60.0) * ofGetWidth()/7 + ofGetWidth()/2;
+    //sphere.set(radius, 128);
     sphere.set(ofGetWidth()/2, 128);
     sphere.draw();
     ofPopMatrix();
@@ -116,29 +131,64 @@ void ColorSphere::draw(){
         }
         float lpf = ofMap(pscale, 0, 255, 0, 800) + 10;
         pluseSynth->set("lpf", lpf);
+        
+        float imp = ofMap(pscale, 0, 255, 10, 16);
+        pluseSynth->set("imp", imp);
     
         float gamp = ofMap(pscale, 0, 255, 1.0, 0.0);
         glitchSynth->set("amp", gamp);
+        
+        fbo3.begin();
+        blinkShader.begin();
+        blinkShader.setUniform1f("time", time);
+        blinkShader.setUniform2fv("resolution", resolution);
+        blinkShader.setUniform1f("amp", 1.0 - gamp);
+        blinkShader.setUniform1f("freq", lpf * 40.0);
+        ofRect(0, 0, ofGetWidth(), ofGetHeight());
+        blinkShader.end();
+        fbo3.end();
+        fbo3.draw(0, ofGetHeight(), ofGetWidth(), -ofGetHeight());
+    }
+    
+    if(bMousePressed){
+        ofNoFill();
+        ofSetColor(255,100);
+        float radius = ofDist(draggedPos.x, draggedPos.y, drawPos.x, drawPos.y);
+        ofCircle(drawPos.x, drawPos.y, radius);
+        ofLine(0, drawPos.y, ofGetWidth(), drawPos.y);
+        ofLine(drawPos.x, 0, drawPos.x, ofGetHeight());
+        ofFill();
     }
     
     ofDisableBlendMode();
 
 }
 
+void ColorSphere::mouseMoved(int x, int y){
+    movePos.x = x;
+    movePos.y = y;
+}
+
 void ColorSphere::mousePressed(int x, int y, int button){
-    bMousePressed = true;
     drawPos.x = x;
     drawPos.y = y;
 }
 
+void ColorSphere::mouseDragged(int x, int y, int button){
+    bMousePressed = true;
+    draggedPos.x = x;
+    draggedPos.y = y;
+}
+
 void ColorSphere::mouseReleased(int x, int y, int button){
+    bMousePressed = false;
     //GLSL
     float dir;
     shaderParams.size() % 2 == 0 ? dir = 1.0 : dir = -1.0;
     ShaderParams sd;
     sd.col = counter % 4;
     sd.freq = powf(ofMap(y, 0, ofGetHeight(), 4, 0.5), 5.0);
-    sd.phase = ofRandom(200, 500) * dir;
+    sd.phase = ofRandom(50, 100) * dir;
     sd.lfo = ofRandom(1,2);
     sd.amp = 0.0;
     
@@ -150,8 +200,8 @@ void ColorSphere::mouseReleased(int x, int y, int button){
     float amp = ofMap(dist, 0.0, 100.0, 0.0, 0.1);
     int note  = int(ofMap(drawPos.y, 0, ofGetHeight(), 85, 1));
     float freq = 50 + 20 * pow((13.0/12.0), note);
-    //float pan = ofMap(x, 0, ofGetWidth(), -1.0, 1.0);
-    float pan = ofRandom(-0.5, 0.5);
+    float pan = ofMap(x, 0, ofGetWidth(), -1.0, 1.0);
+    //float pan = ofRandom(-0.5, 0.5);
     sd.synth = new ofxSCSynth("col_sine");
     sd.synth->create();
     sd.synth->set("gate", 1);
@@ -187,10 +237,19 @@ void ColorSphere::keyPressed(int key){
     if (key == 'h') {
         drawPulse = true;
         pluseSynth = new ofxSCSynth("col_sawbass");
-        pluseSynth->set("lpf", 10);
+        pluseSynth->set("lpf", 100);
         pluseSynth->set("amp", 0.7);
         pluseSynth->create();
         pulseStartTime = ofGetElapsedTimef();
+    }
+    if(key == 'c'){
+        if (bComb) {
+            bComb = false;
+            fx->set("combGate", 0.0);
+        } else {
+            bComb = true;
+            fx->set("combGate", 1.0);
+        }
     }
 }
 

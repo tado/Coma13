@@ -18,6 +18,8 @@ class ColorSphere : public itg::ofxState<> {
     void setup();
     void update();
     void draw();
+    void mouseMoved(int x, int y );
+    void mouseDragged(int x, int y, int button);
     void mousePressed(int x, int y, int button);
     void mouseReleased(int x, int y, int button);
     void keyPressed(int key);
@@ -38,6 +40,7 @@ class ColorSphere : public itg::ofxState<> {
     
     ofxSCSynth *fx;
     ofVec2f drawPos;
+    ofVec2f draggedPos;
     bool bMousePressed;
     
     ofSpherePrimitive sphere;
@@ -49,4 +52,12 @@ class ColorSphere : public itg::ofxState<> {
     ofFbo fbo2;
     ofxSCSynth *glitchSynth;
     ofxSCSynth *pluseSynth;
+    
+    ofShader blinkShader;
+    ofFbo fbo3;
+    
+    float sphereStartTime;
+    
+    bool bComb;
+    ofVec2f movePos;
 };

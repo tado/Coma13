@@ -22,12 +22,15 @@ SynthDef("col_fx", {
 */
 
 SynthDef("col_fx", {
-var s, z, y;
+	arg delay = 0.02, combAmp = 0.0, combGate = 0.0;
+	var s, z, y, c;
 	s = In.ar(3, 2);
 	z = DelayN.ar(s, 0.048);
 	y = Mix.ar(Array.fill(7,{ CombL.ar(z, 0.1, LFNoise1.kr(0.1.rand, 0.04, 0.06), 6) }));
+	c = CombN.ar(y, 1.0, delay, 1.2, combAmp * combGate);
 	4.do({ y = AllpassN.ar(y, 0.050, [0.050.rand, 0.050.rand], 1) });
-	Out.ar(0,(s+(0.2*y)).softclip);
+	
+	Out.ar(0,(s+(0.2*y + c)).softclip);
 }).store;
 
 
@@ -104,12 +107,12 @@ SynthDef("col_harmony", {
 }).store;
 
 SynthDef("col_sawbass", {
-	arg base=20, lpf=20, rq=0.4, amp=0.7;
+	arg base=20, lpf=20, rq=0.4, amp=0.7, imp = 12;
 	var detune, harm, ratio, s1, s2, s3, s4, s5, s6, s7, s8, w, mod, pul, out;
 	ratio = 2;
 	harm = 1.5;
 	detune = 0.1;
-	pul = Impulse.ar(12.0);
+	pul = Impulse.ar(imp);
 
 	s1 = Saw.ar([base+detune.rand, base+detune.rand])*amp
 	+ Saw.ar([base*harm+detune.rand, base*harm+detune.rand])*amp;

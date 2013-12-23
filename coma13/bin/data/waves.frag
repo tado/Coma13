@@ -2,7 +2,7 @@
 precision mediump float;
 #endif
 
-const int MAX = 20;
+const int MAX = 40;
 uniform float time;
 uniform vec2 resolution;
 uniform float num;

@@ -5,25 +5,17 @@ precision mediump float;
 uniform float time;
 uniform vec2 mouse;
 uniform vec2 resolution;
-
-const int num = 20;
-uniform float pulseFreq[num];
-
+uniform float freq;
+uniform float amp;
 
 void main( void ) {
-    vec3 col;
-    for (int i = 0; i < num; i++) {
-        float n = mod(float(i), 3.0);
-        if (n == 0.0) {
-            col.r = col.r + sin(time * pulseFreq[i]);
-        }
-        if (n == 1.0) {
-            col.g = col.g + sin(time * pulseFreq[i]);
-        }
-        if (n == 2.0) {
-            col.b = col.b + sin(time * pulseFreq[i]);
-        }
-        //col = col + sin(time * pulseFreq[i]) * 0.4;
-    }
-    gl_FragColor = vec4( col, 1.0 );
+    
+	vec2 position = ( gl_FragCoord.xy / resolution.xy ) + mouse / 4.0;
+    
+	float color = 0.0;
+	color += sin( 10.0 + time * freq) + 1.0;
+    color *= amp;
+    
+	gl_FragColor = vec4( vec3( color*0.5, color* 0.8, color ), 1.0 );
+    
 }

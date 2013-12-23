@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0546D1A38E13BD319CC9755B /* OscReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9BF3AA0D4FAA89D0F8A0E545 /* OscReceivedElements.cpp */; };
 		14A503607FFA09AE34186B76 /* ofxSCGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15ACE3D73F384D1B71D52792 /* ofxSCGroup.cpp */; };
+		185226AF18666EFF00D44CE3 /* blink.frag in Sources */ = {isa = PBXBuildFile; fileRef = 185226AE18666EFF00D44CE3 /* blink.frag */; };
 		186C9EEA1864343000E8A196 /* ColorSphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 186C9EE81864343000E8A196 /* ColorSphere.cpp */; };
 		186C9EEF18643A4800E8A196 /* colorSphere.frag in Sources */ = {isa = PBXBuildFile; fileRef = 186C9EED18643A4800E8A196 /* colorSphere.frag */; };
 		186C9EF018643A4800E8A196 /* colorSphere.vert in Sources */ = {isa = PBXBuildFile; fileRef = 186C9EEE18643A4800E8A196 /* colorSphere.vert */; };
@@ -100,6 +101,7 @@
 		029684CF678F70F6D3537A29 /* OscOutboundPacketStream.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscOutboundPacketStream.h; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscOutboundPacketStream.h; sourceTree = SOURCE_ROOT; };
 		0AED834CE4DEC5260AF302A2 /* ofxOscParameterSync.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxOscParameterSync.cpp; path = ../../../addons/ofxOsc/src/ofxOscParameterSync.cpp; sourceTree = SOURCE_ROOT; };
 		15ACE3D73F384D1B71D52792 /* ofxSCGroup.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxSCGroup.cpp; path = ../../../addons/ofxSuperCollider/src/ofxSCGroup.cpp; sourceTree = SOURCE_ROOT; };
+		185226AE18666EFF00D44CE3 /* blink.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = blink.frag; path = bin/data/blink.frag; sourceTree = SOURCE_ROOT; };
 		185527997F0B73A279912DB2 /* ofxStateMachine.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxStateMachine.h; path = ../../../addons/ofxStateMachine/src/ofxStateMachine.h; sourceTree = SOURCE_ROOT; };
 		185622D918606DA2005484FB /* SharedData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedData.h; sourceTree = "<group>"; };
 		186C9EE81864343000E8A196 /* ColorSphere.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColorSphere.cpp; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 				18C5C6F1186484EF00C07897 /* Waves.h */,
 				18C5C6F0186484EF00C07897 /* Waves.cpp */,
 				18C5C6EE1864774100C07897 /* waves.frag */,
+				185226AE18666EFF00D44CE3 /* blink.frag */,
 			);
 			name = States;
 			sourceTree = "<group>";
@@ -807,6 +810,7 @@
 				E4B69E210A3A1BDC003C02F2 /* testApp.cpp in Sources */,
 				18C5C6EF1864774100C07897 /* waves.frag in Sources */,
 				72A929D3561B8232A182ABFC /* ofxOscBundle.cpp in Sources */,
+				185226AF18666EFF00D44CE3 /* blink.frag in Sources */,
 				5864AD82E20F15536D054EA3 /* ofxOscMessage.cpp in Sources */,
 				18C5C6F2186484EF00C07897 /* Waves.cpp in Sources */,
 				4ADB88E2FB52E76A471065DE /* ofxOscParameterSync.cpp in Sources */,

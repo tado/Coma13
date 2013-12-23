@@ -6,6 +6,7 @@
 void testApp::setup(){
     //ofSetVerticalSync(true);
     ofxSuperColliderServer::init(57110, 96000);
+    ofSetCircleResolution(32);
     
 	stateMachine.addState<ColorSphere>();
     stateMachine.addState<Waves>();

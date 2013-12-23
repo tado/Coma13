@@ -48,6 +48,7 @@ void Waves::update(){
 }
 void Waves::draw(){
     ofBackground(0);
+    ofSetColor(255);
     float time = ofGetElapsedTimef();
     float resolution[] = {width, height};
     fbo.begin();
@@ -61,16 +62,31 @@ void Waves::draw(){
     shader.end();
     fbo.end();
     fbo.draw(0, ofGetHeight(), ofGetWidth(), -ofGetHeight());
+    
+    if (bMousePressed) {
+        ofNoFill();
+        ofSetColor(255,63);
+        ofBeginShape();
+        for (int i = 0; i < path.size(); i++) {
+            ofVertex(path[i].x, path[i].y);
+        }
+        ofEndShape();
+        ofFill();
+    }
+}
+
+void Waves::mouseDragged(int x, int y, int button){
+    bMousePressed = true;
+    path.push_back(ofVec2f(x, y));
 }
 
 void Waves::mousePressed(int x, int y, int button){
-    
+    path.clear();
 }
+
 void Waves::mouseReleased(int x, int y, int button){
-    
-}
-void Waves::keyPressed(int key){
-    if (key == 'a') {
+    bMousePressed = false;
+    if(counter < MAX){
         counter++;
         fadeout = false;
         level = 0.0;
@@ -90,6 +106,32 @@ void Waves::keyPressed(int key){
         w.synth->set("detune", detune);
         w.synth->create();
         waveParams.push_back(w);
+    }
+}
+
+void Waves::keyPressed(int key){
+    if (key == 'a') {
+        if(counter < MAX){
+            counter++;
+            fadeout = false;
+            level = 0.0;
+            
+            WaveParams w;
+            w.synth = new ofxSCSynth("col_closesaw");
+            w.synth->create();
+            
+            float detune = ofRandom(-0.15, 0.15);
+            int nth = counter;
+            //startTime = ofGetElapsedTimef();
+            
+            w.synth->set("gate", 1);
+            w.synth->set("amp", 0.75);
+            w.synth->set("rq", 1.0);
+            w.synth->set("n", nth);
+            w.synth->set("detune", detune);
+            w.synth->create();
+            waveParams.push_back(w);
+        }
     }
     if (key == 'd') {
         if(counter - fadeCount > 0){
