@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		0546D1A38E13BD319CC9755B /* OscReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9BF3AA0D4FAA89D0F8A0E545 /* OscReceivedElements.cpp */; };
 		14A503607FFA09AE34186B76 /* ofxSCGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15ACE3D73F384D1B71D52792 /* ofxSCGroup.cpp */; };
+		1812F2CA18CB16AA0050F895 /* libscsynth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1812F1CB18CB16A90050F895 /* libscsynth.a */; };
+		1812F2CB18CB16AA0050F895 /* libsndfile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1812F1CC18CB16A90050F895 /* libsndfile.a */; };
+		1812F2CC18CB16AA0050F895 /* ofxSuperColliderServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1812F1CE18CB16A90050F895 /* ofxSuperColliderServer.cpp */; };
 		185226AF18666EFF00D44CE3 /* blink.frag in Sources */ = {isa = PBXBuildFile; fileRef = 185226AE18666EFF00D44CE3 /* blink.frag */; };
 		186C9EEA1864343000E8A196 /* ColorSphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 186C9EE81864343000E8A196 /* ColorSphere.cpp */; };
 		186C9EEF18643A4800E8A196 /* colorSphere.frag in Sources */ = {isa = PBXBuildFile; fileRef = 186C9EED18643A4800E8A196 /* colorSphere.frag */; };
 		186C9EF018643A4800E8A196 /* colorSphere.vert in Sources */ = {isa = PBXBuildFile; fileRef = 186C9EEE18643A4800E8A196 /* colorSphere.vert */; };
-		18A424D918632E1400D44302 /* libscsynth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A423DA18632E1300D44302 /* libscsynth.a */; };
-		18A424DA18632E1400D44302 /* libsndfile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A423DB18632E1300D44302 /* libsndfile.a */; };
-		18A424DB18632E1400D44302 /* ofxSuperColliderServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18A423DD18632E1400D44302 /* ofxSuperColliderServer.cpp */; };
 		18C5C6EF1864774100C07897 /* waves.frag in Sources */ = {isa = PBXBuildFile; fileRef = 18C5C6EE1864774100C07897 /* waves.frag */; };
 		18C5C6F2186484EF00C07897 /* Waves.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18C5C6F0186484EF00C07897 /* Waves.cpp */; };
 		18CB16E9947C4281DF428573 /* ofxSCResourceAllocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B1C2C9AD397A02F5E8FE538 /* ofxSCResourceAllocator.cpp */; };
@@ -60,13 +60,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		18A4254618632E1500D44302 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 18A4109518632E0800D44302 /* scsynth.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D2AAC046055464E500DB518D;
-			remoteInfo = scsynth;
-		};
 		E4328147138ABC890047C5CB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */;
@@ -101,6 +94,78 @@
 		029684CF678F70F6D3537A29 /* OscOutboundPacketStream.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscOutboundPacketStream.h; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscOutboundPacketStream.h; sourceTree = SOURCE_ROOT; };
 		0AED834CE4DEC5260AF302A2 /* ofxOscParameterSync.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxOscParameterSync.cpp; path = ../../../addons/ofxOsc/src/ofxOscParameterSync.cpp; sourceTree = SOURCE_ROOT; };
 		15ACE3D73F384D1B71D52792 /* ofxSCGroup.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxSCGroup.cpp; path = ../../../addons/ofxSuperCollider/src/ofxSCGroup.cpp; sourceTree = SOURCE_ROOT; };
+		1812F18418CB16A90050F895 /* dfftlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dfftlib.h; sourceTree = "<group>"; };
+		1812F18518CB16A90050F895 /* fftlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fftlib.h; sourceTree = "<group>"; };
+		1812F18618CB16A90050F895 /* SC_AllocPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_AllocPool.h; sourceTree = "<group>"; };
+		1812F18718CB16A90050F895 /* SC_Altivec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Altivec.h; sourceTree = "<group>"; };
+		1812F18818CB16A90050F895 /* SC_DirUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_DirUtils.h; sourceTree = "<group>"; };
+		1812F18918CB16A90050F895 /* SC_Endian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Endian.h; sourceTree = "<group>"; };
+		1812F18A18CB16A90050F895 /* SC_fftlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_fftlib.h; sourceTree = "<group>"; };
+		1812F18B18CB16A90050F895 /* SC_FIFO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_FIFO.h; sourceTree = "<group>"; };
+		1812F18C18CB16A90050F895 /* sc_popen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_popen.h; sourceTree = "<group>"; };
+		1812F18D18CB16A90050F895 /* SC_Reply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Reply.h; sourceTree = "<group>"; };
+		1812F18E18CB16A90050F895 /* SC_Sem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Sem.h; sourceTree = "<group>"; };
+		1812F18F18CB16A90050F895 /* SC_StandAloneInfo_Darwin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_StandAloneInfo_Darwin.h; sourceTree = "<group>"; };
+		1812F19018CB16A90050F895 /* SC_StringBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_StringBuffer.h; sourceTree = "<group>"; };
+		1812F19118CB16A90050F895 /* SC_StringParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_StringParser.h; sourceTree = "<group>"; };
+		1812F19218CB16A90050F895 /* SC_VFP11.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_VFP11.h; sourceTree = "<group>"; };
+		1812F19318CB16A90050F895 /* SC_Win32Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Win32Utils.h; sourceTree = "<group>"; };
+		1812F19418CB16A90050F895 /* scsynthsend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scsynthsend.h; sourceTree = "<group>"; };
+		1812F19618CB16A90050F895 /* clz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = clz.h; sourceTree = "<group>"; };
+		1812F19718CB16A90050F895 /* Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hash.h; sourceTree = "<group>"; };
+		1812F19818CB16A90050F895 /* SC_BoundsMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_BoundsMacros.h; sourceTree = "<group>"; };
+		1812F19918CB16A90050F895 /* SC_BufGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_BufGen.h; sourceTree = "<group>"; };
+		1812F19A18CB16A90050F895 /* SC_Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Constants.h; sourceTree = "<group>"; };
+		1812F19B18CB16A90050F895 /* SC_DemandUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_DemandUnit.h; sourceTree = "<group>"; };
+		1812F19C18CB16A90050F895 /* SC_FifoMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_FifoMsg.h; sourceTree = "<group>"; };
+		1812F19D18CB16A90050F895 /* SC_Graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Graph.h; sourceTree = "<group>"; };
+		1812F19E18CB16A90050F895 /* SC_InlineBinaryOp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_InlineBinaryOp.h; sourceTree = "<group>"; };
+		1812F19F18CB16A90050F895 /* SC_InlineUnaryOp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_InlineUnaryOp.h; sourceTree = "<group>"; };
+		1812F1A018CB16A90050F895 /* SC_InterfaceTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_InterfaceTable.h; sourceTree = "<group>"; };
+		1812F1A118CB16A90050F895 /* sc_msg_iter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_msg_iter.h; sourceTree = "<group>"; };
+		1812F1A218CB16A90050F895 /* SC_Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Node.h; sourceTree = "<group>"; };
+		1812F1A318CB16A90050F895 /* SC_PlugIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_PlugIn.h; sourceTree = "<group>"; };
+		1812F1A418CB16A90050F895 /* SC_Rate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Rate.h; sourceTree = "<group>"; };
+		1812F1A518CB16A90050F895 /* SC_RGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_RGen.h; sourceTree = "<group>"; };
+		1812F1A618CB16A90050F895 /* SC_SndBuf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_SndBuf.h; sourceTree = "<group>"; };
+		1812F1A718CB16A90050F895 /* SC_sndfile_stub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_sndfile_stub.h; sourceTree = "<group>"; };
+		1812F1A818CB16A90050F895 /* SC_Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Types.h; sourceTree = "<group>"; };
+		1812F1A918CB16A90050F895 /* SC_Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Unit.h; sourceTree = "<group>"; };
+		1812F1AA18CB16A90050F895 /* SC_Wire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Wire.h; sourceTree = "<group>"; };
+		1812F1AB18CB16A90050F895 /* SC_World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_World.h; sourceTree = "<group>"; };
+		1812F1AC18CB16A90050F895 /* SC_WorldOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_WorldOptions.h; sourceTree = "<group>"; };
+		1812F1AD18CB16A90050F895 /* Unroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Unroll.h; sourceTree = "<group>"; };
+		1812F1AF18CB16A90050F895 /* HashTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HashTable.h; sourceTree = "<group>"; };
+		1812F1B018CB16A90050F895 /* MsgFifo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgFifo.h; sourceTree = "<group>"; };
+		1812F1B118CB16A90050F895 /* OSC_Packet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSC_Packet.h; sourceTree = "<group>"; };
+		1812F1B218CB16A90050F895 /* PriorityQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriorityQueue.h; sourceTree = "<group>"; };
+		1812F1B318CB16A90050F895 /* ReadWriteMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadWriteMacros.h; sourceTree = "<group>"; };
+		1812F1B418CB16A90050F895 /* Rendezvous.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rendezvous.h; sourceTree = "<group>"; };
+		1812F1B518CB16A90050F895 /* SC_AU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_AU.h; sourceTree = "<group>"; };
+		1812F1B618CB16A90050F895 /* SC_Complex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Complex.h; sourceTree = "<group>"; };
+		1812F1B718CB16A90050F895 /* SC_ComPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_ComPort.h; sourceTree = "<group>"; };
+		1812F1B818CB16A90050F895 /* SC_CoreAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_CoreAudio.h; sourceTree = "<group>"; };
+		1812F1B918CB16A90050F895 /* SC_Errors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Errors.h; sourceTree = "<group>"; };
+		1812F1BA18CB16A90050F895 /* SC_GraphDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_GraphDef.h; sourceTree = "<group>"; };
+		1812F1BB18CB16A90050F895 /* SC_Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Group.h; sourceTree = "<group>"; };
+		1812F1BC18CB16A90050F895 /* SC_HiddenWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_HiddenWorld.h; sourceTree = "<group>"; };
+		1812F1BD18CB16A90050F895 /* SC_Lib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Lib.h; sourceTree = "<group>"; };
+		1812F1BE18CB16A90050F895 /* SC_Lib_Cintf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Lib_Cintf.h; sourceTree = "<group>"; };
+		1812F1BF18CB16A90050F895 /* SC_List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_List.h; sourceTree = "<group>"; };
+		1812F1C018CB16A90050F895 /* SC_Lock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Lock.h; sourceTree = "<group>"; };
+		1812F1C118CB16A90050F895 /* SC_Prototypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Prototypes.h; sourceTree = "<group>"; };
+		1812F1C218CB16A90050F895 /* SC_Samp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Samp.h; sourceTree = "<group>"; };
+		1812F1C318CB16A90050F895 /* SC_SequencedCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_SequencedCommand.h; sourceTree = "<group>"; };
+		1812F1C418CB16A90050F895 /* SC_Str4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Str4.h; sourceTree = "<group>"; };
+		1812F1C518CB16A90050F895 /* SC_SyncCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_SyncCondition.h; sourceTree = "<group>"; };
+		1812F1C618CB16A90050F895 /* SC_SynthDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_SynthDef.h; sourceTree = "<group>"; };
+		1812F1C718CB16A90050F895 /* SC_UnitDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_UnitDef.h; sourceTree = "<group>"; };
+		1812F1C818CB16A90050F895 /* SC_UnitSpec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_UnitSpec.h; sourceTree = "<group>"; };
+		1812F1C918CB16A90050F895 /* SC_WireSpec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_WireSpec.h; sourceTree = "<group>"; };
+		1812F1CB18CB16A90050F895 /* libscsynth.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libscsynth.a; sourceTree = "<group>"; };
+		1812F1CC18CB16A90050F895 /* libsndfile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsndfile.a; sourceTree = "<group>"; };
+		1812F1CE18CB16A90050F895 /* ofxSuperColliderServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxSuperColliderServer.cpp; sourceTree = "<group>"; };
+		1812F1CF18CB16A90050F895 /* ofxSuperColliderServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSuperColliderServer.h; sourceTree = "<group>"; };
 		185226AE18666EFF00D44CE3 /* blink.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = blink.frag; path = bin/data/blink.frag; sourceTree = SOURCE_ROOT; };
 		185527997F0B73A279912DB2 /* ofxStateMachine.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxStateMachine.h; path = ../../../addons/ofxStateMachine/src/ofxStateMachine.h; sourceTree = SOURCE_ROOT; };
 		185622D918606DA2005484FB /* SharedData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedData.h; sourceTree = "<group>"; };
@@ -108,80 +173,6 @@
 		186C9EE91864343000E8A196 /* ColorSphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorSphere.h; sourceTree = "<group>"; };
 		186C9EED18643A4800E8A196 /* colorSphere.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = colorSphere.frag; path = bin/data/colorSphere.frag; sourceTree = SOURCE_ROOT; };
 		186C9EEE18643A4800E8A196 /* colorSphere.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = colorSphere.vert; path = bin/data/colorSphere.vert; sourceTree = SOURCE_ROOT; };
-		18A4109518632E0800D44302 /* scsynth.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = scsynth.xcodeproj; sourceTree = "<group>"; };
-		18A4109818632E0800D44302 /* SuperCollider-3.4-Source.tar.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = "SuperCollider-3.4-Source.tar.gz"; sourceTree = "<group>"; };
-		18A4239318632E1300D44302 /* dfftlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dfftlib.h; sourceTree = "<group>"; };
-		18A4239418632E1300D44302 /* fftlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fftlib.h; sourceTree = "<group>"; };
-		18A4239518632E1300D44302 /* SC_AllocPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_AllocPool.h; sourceTree = "<group>"; };
-		18A4239618632E1300D44302 /* SC_Altivec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Altivec.h; sourceTree = "<group>"; };
-		18A4239718632E1300D44302 /* SC_DirUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_DirUtils.h; sourceTree = "<group>"; };
-		18A4239818632E1300D44302 /* SC_Endian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Endian.h; sourceTree = "<group>"; };
-		18A4239918632E1300D44302 /* SC_fftlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_fftlib.h; sourceTree = "<group>"; };
-		18A4239A18632E1300D44302 /* SC_FIFO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_FIFO.h; sourceTree = "<group>"; };
-		18A4239B18632E1300D44302 /* sc_popen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_popen.h; sourceTree = "<group>"; };
-		18A4239C18632E1300D44302 /* SC_Reply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Reply.h; sourceTree = "<group>"; };
-		18A4239D18632E1300D44302 /* SC_Sem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Sem.h; sourceTree = "<group>"; };
-		18A4239E18632E1300D44302 /* SC_StandAloneInfo_Darwin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_StandAloneInfo_Darwin.h; sourceTree = "<group>"; };
-		18A4239F18632E1300D44302 /* SC_StringBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_StringBuffer.h; sourceTree = "<group>"; };
-		18A423A018632E1300D44302 /* SC_StringParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_StringParser.h; sourceTree = "<group>"; };
-		18A423A118632E1300D44302 /* SC_VFP11.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_VFP11.h; sourceTree = "<group>"; };
-		18A423A218632E1300D44302 /* SC_Win32Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Win32Utils.h; sourceTree = "<group>"; };
-		18A423A318632E1300D44302 /* scsynthsend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scsynthsend.h; sourceTree = "<group>"; };
-		18A423A518632E1300D44302 /* clz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = clz.h; sourceTree = "<group>"; };
-		18A423A618632E1300D44302 /* Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hash.h; sourceTree = "<group>"; };
-		18A423A718632E1300D44302 /* SC_BoundsMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_BoundsMacros.h; sourceTree = "<group>"; };
-		18A423A818632E1300D44302 /* SC_BufGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_BufGen.h; sourceTree = "<group>"; };
-		18A423A918632E1300D44302 /* SC_Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Constants.h; sourceTree = "<group>"; };
-		18A423AA18632E1300D44302 /* SC_DemandUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_DemandUnit.h; sourceTree = "<group>"; };
-		18A423AB18632E1300D44302 /* SC_FifoMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_FifoMsg.h; sourceTree = "<group>"; };
-		18A423AC18632E1300D44302 /* SC_Graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Graph.h; sourceTree = "<group>"; };
-		18A423AD18632E1300D44302 /* SC_InlineBinaryOp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_InlineBinaryOp.h; sourceTree = "<group>"; };
-		18A423AE18632E1300D44302 /* SC_InlineUnaryOp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_InlineUnaryOp.h; sourceTree = "<group>"; };
-		18A423AF18632E1300D44302 /* SC_InterfaceTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_InterfaceTable.h; sourceTree = "<group>"; };
-		18A423B018632E1300D44302 /* sc_msg_iter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc_msg_iter.h; sourceTree = "<group>"; };
-		18A423B118632E1300D44302 /* SC_Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Node.h; sourceTree = "<group>"; };
-		18A423B218632E1300D44302 /* SC_PlugIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_PlugIn.h; sourceTree = "<group>"; };
-		18A423B318632E1300D44302 /* SC_Rate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Rate.h; sourceTree = "<group>"; };
-		18A423B418632E1300D44302 /* SC_RGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_RGen.h; sourceTree = "<group>"; };
-		18A423B518632E1300D44302 /* SC_SndBuf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_SndBuf.h; sourceTree = "<group>"; };
-		18A423B618632E1300D44302 /* SC_sndfile_stub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_sndfile_stub.h; sourceTree = "<group>"; };
-		18A423B718632E1300D44302 /* SC_Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Types.h; sourceTree = "<group>"; };
-		18A423B818632E1300D44302 /* SC_Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Unit.h; sourceTree = "<group>"; };
-		18A423B918632E1300D44302 /* SC_Wire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Wire.h; sourceTree = "<group>"; };
-		18A423BA18632E1300D44302 /* SC_World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_World.h; sourceTree = "<group>"; };
-		18A423BB18632E1300D44302 /* SC_WorldOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_WorldOptions.h; sourceTree = "<group>"; };
-		18A423BC18632E1300D44302 /* Unroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Unroll.h; sourceTree = "<group>"; };
-		18A423BE18632E1300D44302 /* HashTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HashTable.h; sourceTree = "<group>"; };
-		18A423BF18632E1300D44302 /* MsgFifo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgFifo.h; sourceTree = "<group>"; };
-		18A423C018632E1300D44302 /* OSC_Packet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSC_Packet.h; sourceTree = "<group>"; };
-		18A423C118632E1300D44302 /* PriorityQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriorityQueue.h; sourceTree = "<group>"; };
-		18A423C218632E1300D44302 /* ReadWriteMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadWriteMacros.h; sourceTree = "<group>"; };
-		18A423C318632E1300D44302 /* Rendezvous.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rendezvous.h; sourceTree = "<group>"; };
-		18A423C418632E1300D44302 /* SC_AU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_AU.h; sourceTree = "<group>"; };
-		18A423C518632E1300D44302 /* SC_Complex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Complex.h; sourceTree = "<group>"; };
-		18A423C618632E1300D44302 /* SC_ComPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_ComPort.h; sourceTree = "<group>"; };
-		18A423C718632E1300D44302 /* SC_CoreAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_CoreAudio.h; sourceTree = "<group>"; };
-		18A423C818632E1300D44302 /* SC_Errors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Errors.h; sourceTree = "<group>"; };
-		18A423C918632E1300D44302 /* SC_GraphDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_GraphDef.h; sourceTree = "<group>"; };
-		18A423CA18632E1300D44302 /* SC_Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Group.h; sourceTree = "<group>"; };
-		18A423CB18632E1300D44302 /* SC_HiddenWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_HiddenWorld.h; sourceTree = "<group>"; };
-		18A423CC18632E1300D44302 /* SC_Lib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Lib.h; sourceTree = "<group>"; };
-		18A423CD18632E1300D44302 /* SC_Lib_Cintf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Lib_Cintf.h; sourceTree = "<group>"; };
-		18A423CE18632E1300D44302 /* SC_List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_List.h; sourceTree = "<group>"; };
-		18A423CF18632E1300D44302 /* SC_Lock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Lock.h; sourceTree = "<group>"; };
-		18A423D018632E1300D44302 /* SC_Prototypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Prototypes.h; sourceTree = "<group>"; };
-		18A423D118632E1300D44302 /* SC_Samp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Samp.h; sourceTree = "<group>"; };
-		18A423D218632E1300D44302 /* SC_SequencedCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_SequencedCommand.h; sourceTree = "<group>"; };
-		18A423D318632E1300D44302 /* SC_Str4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Str4.h; sourceTree = "<group>"; };
-		18A423D418632E1300D44302 /* SC_SyncCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_SyncCondition.h; sourceTree = "<group>"; };
-		18A423D518632E1300D44302 /* SC_SynthDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_SynthDef.h; sourceTree = "<group>"; };
-		18A423D618632E1300D44302 /* SC_UnitDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_UnitDef.h; sourceTree = "<group>"; };
-		18A423D718632E1300D44302 /* SC_UnitSpec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_UnitSpec.h; sourceTree = "<group>"; };
-		18A423D818632E1300D44302 /* SC_WireSpec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_WireSpec.h; sourceTree = "<group>"; };
-		18A423DA18632E1300D44302 /* libscsynth.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libscsynth.a; sourceTree = "<group>"; };
-		18A423DB18632E1300D44302 /* libsndfile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsndfile.a; sourceTree = "<group>"; };
-		18A423DD18632E1400D44302 /* ofxSuperColliderServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxSuperColliderServer.cpp; sourceTree = "<group>"; };
-		18A423DE18632E1400D44302 /* ofxSuperColliderServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSuperColliderServer.h; sourceTree = "<group>"; };
 		18C5C6EE1864774100C07897 /* waves.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = waves.frag; path = bin/data/waves.frag; sourceTree = SOURCE_ROOT; };
 		18C5C6F0186484EF00C07897 /* Waves.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Waves.cpp; sourceTree = "<group>"; };
 		18C5C6F1186484EF00C07897 /* Waves.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Waves.h; sourceTree = "<group>"; };
@@ -269,14 +260,14 @@
 				E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */,
 				E45BE97C0E8CC7DD009D7055 /* ApplicationServices.framework in Frameworks */,
 				E45BE97D0E8CC7DD009D7055 /* AudioToolbox.framework in Frameworks */,
-				18A424D918632E1400D44302 /* libscsynth.a in Frameworks */,
+				1812F2CA18CB16AA0050F895 /* libscsynth.a in Frameworks */,
 				E45BE97E0E8CC7DD009D7055 /* Carbon.framework in Frameworks */,
 				E45BE97F0E8CC7DD009D7055 /* CoreAudio.framework in Frameworks */,
 				E45BE9800E8CC7DD009D7055 /* CoreFoundation.framework in Frameworks */,
 				E45BE9810E8CC7DD009D7055 /* CoreServices.framework in Frameworks */,
 				E45BE9830E8CC7DD009D7055 /* OpenGL.framework in Frameworks */,
 				E45BE9840E8CC7DD009D7055 /* QuickTime.framework in Frameworks */,
-				18A424DA18632E1400D44302 /* libsndfile.a in Frameworks */,
+				1812F2CB18CB16AA0050F895 /* libsndfile.a in Frameworks */,
 				E4C2424710CC5A17004149E2 /* AppKit.framework in Frameworks */,
 				E4C2424810CC5A17004149E2 /* Cocoa.framework in Frameworks */,
 				E4C2424910CC5A17004149E2 /* IOKit.framework in Frameworks */,
@@ -287,6 +278,150 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1812DE8318CB16950050F895 /* ofxSuperColliderServer */ = {
+			isa = PBXGroup;
+			children = (
+				1812F18018CB16A90050F895 /* libs */,
+				1812F1CD18CB16A90050F895 /* src */,
+			);
+			name = ofxSuperColliderServer;
+			path = ../../../addons/ofxSuperColliderServer;
+			sourceTree = "<group>";
+		};
+		1812F18018CB16A90050F895 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				1812F18118CB16A90050F895 /* supercollider */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		1812F18118CB16A90050F895 /* supercollider */ = {
+			isa = PBXGroup;
+			children = (
+				1812F18218CB16A90050F895 /* include */,
+				1812F1CA18CB16A90050F895 /* lib */,
+			);
+			path = supercollider;
+			sourceTree = "<group>";
+		};
+		1812F18218CB16A90050F895 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				1812F18318CB16A90050F895 /* common */,
+				1812F19518CB16A90050F895 /* plugin_interface */,
+				1812F1AE18CB16A90050F895 /* server */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		1812F18318CB16A90050F895 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				1812F18418CB16A90050F895 /* dfftlib.h */,
+				1812F18518CB16A90050F895 /* fftlib.h */,
+				1812F18618CB16A90050F895 /* SC_AllocPool.h */,
+				1812F18718CB16A90050F895 /* SC_Altivec.h */,
+				1812F18818CB16A90050F895 /* SC_DirUtils.h */,
+				1812F18918CB16A90050F895 /* SC_Endian.h */,
+				1812F18A18CB16A90050F895 /* SC_fftlib.h */,
+				1812F18B18CB16A90050F895 /* SC_FIFO.h */,
+				1812F18C18CB16A90050F895 /* sc_popen.h */,
+				1812F18D18CB16A90050F895 /* SC_Reply.h */,
+				1812F18E18CB16A90050F895 /* SC_Sem.h */,
+				1812F18F18CB16A90050F895 /* SC_StandAloneInfo_Darwin.h */,
+				1812F19018CB16A90050F895 /* SC_StringBuffer.h */,
+				1812F19118CB16A90050F895 /* SC_StringParser.h */,
+				1812F19218CB16A90050F895 /* SC_VFP11.h */,
+				1812F19318CB16A90050F895 /* SC_Win32Utils.h */,
+				1812F19418CB16A90050F895 /* scsynthsend.h */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		1812F19518CB16A90050F895 /* plugin_interface */ = {
+			isa = PBXGroup;
+			children = (
+				1812F19618CB16A90050F895 /* clz.h */,
+				1812F19718CB16A90050F895 /* Hash.h */,
+				1812F19818CB16A90050F895 /* SC_BoundsMacros.h */,
+				1812F19918CB16A90050F895 /* SC_BufGen.h */,
+				1812F19A18CB16A90050F895 /* SC_Constants.h */,
+				1812F19B18CB16A90050F895 /* SC_DemandUnit.h */,
+				1812F19C18CB16A90050F895 /* SC_FifoMsg.h */,
+				1812F19D18CB16A90050F895 /* SC_Graph.h */,
+				1812F19E18CB16A90050F895 /* SC_InlineBinaryOp.h */,
+				1812F19F18CB16A90050F895 /* SC_InlineUnaryOp.h */,
+				1812F1A018CB16A90050F895 /* SC_InterfaceTable.h */,
+				1812F1A118CB16A90050F895 /* sc_msg_iter.h */,
+				1812F1A218CB16A90050F895 /* SC_Node.h */,
+				1812F1A318CB16A90050F895 /* SC_PlugIn.h */,
+				1812F1A418CB16A90050F895 /* SC_Rate.h */,
+				1812F1A518CB16A90050F895 /* SC_RGen.h */,
+				1812F1A618CB16A90050F895 /* SC_SndBuf.h */,
+				1812F1A718CB16A90050F895 /* SC_sndfile_stub.h */,
+				1812F1A818CB16A90050F895 /* SC_Types.h */,
+				1812F1A918CB16A90050F895 /* SC_Unit.h */,
+				1812F1AA18CB16A90050F895 /* SC_Wire.h */,
+				1812F1AB18CB16A90050F895 /* SC_World.h */,
+				1812F1AC18CB16A90050F895 /* SC_WorldOptions.h */,
+				1812F1AD18CB16A90050F895 /* Unroll.h */,
+			);
+			path = plugin_interface;
+			sourceTree = "<group>";
+		};
+		1812F1AE18CB16A90050F895 /* server */ = {
+			isa = PBXGroup;
+			children = (
+				1812F1AF18CB16A90050F895 /* HashTable.h */,
+				1812F1B018CB16A90050F895 /* MsgFifo.h */,
+				1812F1B118CB16A90050F895 /* OSC_Packet.h */,
+				1812F1B218CB16A90050F895 /* PriorityQueue.h */,
+				1812F1B318CB16A90050F895 /* ReadWriteMacros.h */,
+				1812F1B418CB16A90050F895 /* Rendezvous.h */,
+				1812F1B518CB16A90050F895 /* SC_AU.h */,
+				1812F1B618CB16A90050F895 /* SC_Complex.h */,
+				1812F1B718CB16A90050F895 /* SC_ComPort.h */,
+				1812F1B818CB16A90050F895 /* SC_CoreAudio.h */,
+				1812F1B918CB16A90050F895 /* SC_Errors.h */,
+				1812F1BA18CB16A90050F895 /* SC_GraphDef.h */,
+				1812F1BB18CB16A90050F895 /* SC_Group.h */,
+				1812F1BC18CB16A90050F895 /* SC_HiddenWorld.h */,
+				1812F1BD18CB16A90050F895 /* SC_Lib.h */,
+				1812F1BE18CB16A90050F895 /* SC_Lib_Cintf.h */,
+				1812F1BF18CB16A90050F895 /* SC_List.h */,
+				1812F1C018CB16A90050F895 /* SC_Lock.h */,
+				1812F1C118CB16A90050F895 /* SC_Prototypes.h */,
+				1812F1C218CB16A90050F895 /* SC_Samp.h */,
+				1812F1C318CB16A90050F895 /* SC_SequencedCommand.h */,
+				1812F1C418CB16A90050F895 /* SC_Str4.h */,
+				1812F1C518CB16A90050F895 /* SC_SyncCondition.h */,
+				1812F1C618CB16A90050F895 /* SC_SynthDef.h */,
+				1812F1C718CB16A90050F895 /* SC_UnitDef.h */,
+				1812F1C818CB16A90050F895 /* SC_UnitSpec.h */,
+				1812F1C918CB16A90050F895 /* SC_WireSpec.h */,
+			);
+			path = server;
+			sourceTree = "<group>";
+		};
+		1812F1CA18CB16A90050F895 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				1812F1CB18CB16A90050F895 /* libscsynth.a */,
+				1812F1CC18CB16A90050F895 /* libsndfile.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		1812F1CD18CB16A90050F895 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				1812F1CE18CB16A90050F895 /* ofxSuperColliderServer.cpp */,
+				1812F1CF18CB16A90050F895 /* ofxSuperColliderServer.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		185622D418606B5F005484FB /* States */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,168 +436,6 @@
 				185226AE18666EFF00D44CE3 /* blink.frag */,
 			);
 			name = States;
-			sourceTree = "<group>";
-		};
-		18A4109218632E0800D44302 /* ofxSuperColliderServer */ = {
-			isa = PBXGroup;
-			children = (
-				18A4109418632E0800D44302 /* build_scsynth */,
-				18A4238F18632E1300D44302 /* libs */,
-				18A423DC18632E1300D44302 /* src */,
-			);
-			name = ofxSuperColliderServer;
-			path = ../../../addons/ofxSuperColliderServer;
-			sourceTree = "<group>";
-		};
-		18A4109418632E0800D44302 /* build_scsynth */ = {
-			isa = PBXGroup;
-			children = (
-				18A4109518632E0800D44302 /* scsynth.xcodeproj */,
-				18A4109818632E0800D44302 /* SuperCollider-3.4-Source.tar.gz */,
-			);
-			path = build_scsynth;
-			sourceTree = "<group>";
-		};
-		18A4109618632E0800D44302 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				18A4254718632E1500D44302 /* libscsynth.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		18A4238F18632E1300D44302 /* libs */ = {
-			isa = PBXGroup;
-			children = (
-				18A4239018632E1300D44302 /* supercollider */,
-			);
-			path = libs;
-			sourceTree = "<group>";
-		};
-		18A4239018632E1300D44302 /* supercollider */ = {
-			isa = PBXGroup;
-			children = (
-				18A4239118632E1300D44302 /* include */,
-				18A423D918632E1300D44302 /* lib */,
-			);
-			path = supercollider;
-			sourceTree = "<group>";
-		};
-		18A4239118632E1300D44302 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				18A4239218632E1300D44302 /* common */,
-				18A423A418632E1300D44302 /* plugin_interface */,
-				18A423BD18632E1300D44302 /* server */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		18A4239218632E1300D44302 /* common */ = {
-			isa = PBXGroup;
-			children = (
-				18A4239318632E1300D44302 /* dfftlib.h */,
-				18A4239418632E1300D44302 /* fftlib.h */,
-				18A4239518632E1300D44302 /* SC_AllocPool.h */,
-				18A4239618632E1300D44302 /* SC_Altivec.h */,
-				18A4239718632E1300D44302 /* SC_DirUtils.h */,
-				18A4239818632E1300D44302 /* SC_Endian.h */,
-				18A4239918632E1300D44302 /* SC_fftlib.h */,
-				18A4239A18632E1300D44302 /* SC_FIFO.h */,
-				18A4239B18632E1300D44302 /* sc_popen.h */,
-				18A4239C18632E1300D44302 /* SC_Reply.h */,
-				18A4239D18632E1300D44302 /* SC_Sem.h */,
-				18A4239E18632E1300D44302 /* SC_StandAloneInfo_Darwin.h */,
-				18A4239F18632E1300D44302 /* SC_StringBuffer.h */,
-				18A423A018632E1300D44302 /* SC_StringParser.h */,
-				18A423A118632E1300D44302 /* SC_VFP11.h */,
-				18A423A218632E1300D44302 /* SC_Win32Utils.h */,
-				18A423A318632E1300D44302 /* scsynthsend.h */,
-			);
-			path = common;
-			sourceTree = "<group>";
-		};
-		18A423A418632E1300D44302 /* plugin_interface */ = {
-			isa = PBXGroup;
-			children = (
-				18A423A518632E1300D44302 /* clz.h */,
-				18A423A618632E1300D44302 /* Hash.h */,
-				18A423A718632E1300D44302 /* SC_BoundsMacros.h */,
-				18A423A818632E1300D44302 /* SC_BufGen.h */,
-				18A423A918632E1300D44302 /* SC_Constants.h */,
-				18A423AA18632E1300D44302 /* SC_DemandUnit.h */,
-				18A423AB18632E1300D44302 /* SC_FifoMsg.h */,
-				18A423AC18632E1300D44302 /* SC_Graph.h */,
-				18A423AD18632E1300D44302 /* SC_InlineBinaryOp.h */,
-				18A423AE18632E1300D44302 /* SC_InlineUnaryOp.h */,
-				18A423AF18632E1300D44302 /* SC_InterfaceTable.h */,
-				18A423B018632E1300D44302 /* sc_msg_iter.h */,
-				18A423B118632E1300D44302 /* SC_Node.h */,
-				18A423B218632E1300D44302 /* SC_PlugIn.h */,
-				18A423B318632E1300D44302 /* SC_Rate.h */,
-				18A423B418632E1300D44302 /* SC_RGen.h */,
-				18A423B518632E1300D44302 /* SC_SndBuf.h */,
-				18A423B618632E1300D44302 /* SC_sndfile_stub.h */,
-				18A423B718632E1300D44302 /* SC_Types.h */,
-				18A423B818632E1300D44302 /* SC_Unit.h */,
-				18A423B918632E1300D44302 /* SC_Wire.h */,
-				18A423BA18632E1300D44302 /* SC_World.h */,
-				18A423BB18632E1300D44302 /* SC_WorldOptions.h */,
-				18A423BC18632E1300D44302 /* Unroll.h */,
-			);
-			path = plugin_interface;
-			sourceTree = "<group>";
-		};
-		18A423BD18632E1300D44302 /* server */ = {
-			isa = PBXGroup;
-			children = (
-				18A423BE18632E1300D44302 /* HashTable.h */,
-				18A423BF18632E1300D44302 /* MsgFifo.h */,
-				18A423C018632E1300D44302 /* OSC_Packet.h */,
-				18A423C118632E1300D44302 /* PriorityQueue.h */,
-				18A423C218632E1300D44302 /* ReadWriteMacros.h */,
-				18A423C318632E1300D44302 /* Rendezvous.h */,
-				18A423C418632E1300D44302 /* SC_AU.h */,
-				18A423C518632E1300D44302 /* SC_Complex.h */,
-				18A423C618632E1300D44302 /* SC_ComPort.h */,
-				18A423C718632E1300D44302 /* SC_CoreAudio.h */,
-				18A423C818632E1300D44302 /* SC_Errors.h */,
-				18A423C918632E1300D44302 /* SC_GraphDef.h */,
-				18A423CA18632E1300D44302 /* SC_Group.h */,
-				18A423CB18632E1300D44302 /* SC_HiddenWorld.h */,
-				18A423CC18632E1300D44302 /* SC_Lib.h */,
-				18A423CD18632E1300D44302 /* SC_Lib_Cintf.h */,
-				18A423CE18632E1300D44302 /* SC_List.h */,
-				18A423CF18632E1300D44302 /* SC_Lock.h */,
-				18A423D018632E1300D44302 /* SC_Prototypes.h */,
-				18A423D118632E1300D44302 /* SC_Samp.h */,
-				18A423D218632E1300D44302 /* SC_SequencedCommand.h */,
-				18A423D318632E1300D44302 /* SC_Str4.h */,
-				18A423D418632E1300D44302 /* SC_SyncCondition.h */,
-				18A423D518632E1300D44302 /* SC_SynthDef.h */,
-				18A423D618632E1300D44302 /* SC_UnitDef.h */,
-				18A423D718632E1300D44302 /* SC_UnitSpec.h */,
-				18A423D818632E1300D44302 /* SC_WireSpec.h */,
-			);
-			path = server;
-			sourceTree = "<group>";
-		};
-		18A423D918632E1300D44302 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				18A423DA18632E1300D44302 /* libscsynth.a */,
-				18A423DB18632E1300D44302 /* libsndfile.a */,
-			);
-			path = lib;
-			sourceTree = "<group>";
-		};
-		18A423DC18632E1300D44302 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				18A423DD18632E1400D44302 /* ofxSuperColliderServer.cpp */,
-				18A423DE18632E1400D44302 /* ofxSuperColliderServer.h */,
-			);
-			path = src;
 			sourceTree = "<group>";
 		};
 		2E834CF5F4C2C9482715C8D8 /* ofxSuperCollider */ = {
@@ -546,7 +519,7 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
-				18A4109218632E0800D44302 /* ofxSuperColliderServer */,
+				1812DE8318CB16950050F895 /* ofxSuperColliderServer */,
 				E6053AB7FEC63D5F83825B88 /* ofxOsc */,
 				4851D11FF22DECA849CB0054 /* ofxStateMachine */,
 				2E834CF5F4C2C9482715C8D8 /* ofxSuperCollider */,
@@ -756,10 +729,6 @@
 					ProductGroup = E4328144138ABC890047C5CB /* Products */;
 					ProjectRef = E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */;
 				},
-				{
-					ProductGroup = 18A4109618632E0800D44302 /* Products */;
-					ProjectRef = 18A4109518632E0800D44302 /* scsynth.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -769,13 +738,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		18A4254718632E1500D44302 /* libscsynth.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libscsynth.a;
-			remoteRef = 18A4254618632E1500D44302 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		E4328148138ABC890047C5CB /* openFrameworksDebug.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -810,6 +772,7 @@
 				E4B69E210A3A1BDC003C02F2 /* testApp.cpp in Sources */,
 				18C5C6EF1864774100C07897 /* waves.frag in Sources */,
 				72A929D3561B8232A182ABFC /* ofxOscBundle.cpp in Sources */,
+				1812F2CC18CB16AA0050F895 /* ofxSuperColliderServer.cpp in Sources */,
 				185226AF18666EFF00D44CE3 /* blink.frag in Sources */,
 				5864AD82E20F15536D054EA3 /* ofxOscMessage.cpp in Sources */,
 				18C5C6F2186484EF00C07897 /* Waves.cpp in Sources */,
@@ -828,7 +791,6 @@
 				C4782ECC372420ACE0615B74 /* OscPrintReceivedElements.cpp in Sources */,
 				0546D1A38E13BD319CC9755B /* OscReceivedElements.cpp in Sources */,
 				879A251454401BC0B6E4F238 /* OscTypes.cpp in Sources */,
-				18A424DB18632E1400D44302 /* ofxSuperColliderServer.cpp in Sources */,
 				EBB8288FD606C26DEDC99CED /* ofxSCBuffer.cpp in Sources */,
 				BB896DB80D22F8F1CAAC31B5 /* ofxSCBus.cpp in Sources */,
 				14A503607FFA09AE34186B76 /* ofxSCGroup.cpp in Sources */,
@@ -1041,10 +1003,14 @@
 					"/Users/tado/Documents/openFrameworks/of_v0.8.0_osx_release/addons/ofxSuperColliderServer/build_scsynth/SuperCollider-Source/iphone/lib",
 					"/Users/tado/Documents/openFrameworks/of_v0.8.0_osx_release/addons/ofxSuperColliderServer/build_scsynth/SuperCollider-Source/mac/lib",
 					"/Users/tado/Documents/openFrameworks/of_v0.8.0_osx_release/addons/ofxSuperColliderServer/build_scsynth/SuperCollider-Source/windows/lib",
+					"/Users/tado/Documents/of_v0.8.0_osx_release/addons/ofxSuperColliderServer/build_scsynth/SuperCollider-Source/iphone/lib",
+					"/Users/tado/Documents/of_v0.8.0_osx_release/addons/ofxSuperColliderServer/build_scsynth/SuperCollider-Source/mac/lib",
+					"/Users/tado/Documents/of_v0.8.0_osx_release/addons/ofxSuperColliderServer/build_scsynth/SuperCollider-Source/windows/lib",
+					/Users/tado/Documents/of_v0.8.0_osx_release/addons/ofxSuperColliderServer/libs/supercollider/lib,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)Debug";
-				SDKROOT = macosx10.9;
+				SDKROOT = macosx10.8;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1132,10 +1098,14 @@
 					"/Users/tado/Documents/openFrameworks/of_v0.8.0_osx_release/addons/ofxSuperColliderServer/build_scsynth/SuperCollider-Source/iphone/lib",
 					"/Users/tado/Documents/openFrameworks/of_v0.8.0_osx_release/addons/ofxSuperColliderServer/build_scsynth/SuperCollider-Source/mac/lib",
 					"/Users/tado/Documents/openFrameworks/of_v0.8.0_osx_release/addons/ofxSuperColliderServer/build_scsynth/SuperCollider-Source/windows/lib",
+					"/Users/tado/Documents/of_v0.8.0_osx_release/addons/ofxSuperColliderServer/build_scsynth/SuperCollider-Source/iphone/lib",
+					"/Users/tado/Documents/of_v0.8.0_osx_release/addons/ofxSuperColliderServer/build_scsynth/SuperCollider-Source/mac/lib",
+					"/Users/tado/Documents/of_v0.8.0_osx_release/addons/ofxSuperColliderServer/build_scsynth/SuperCollider-Source/windows/lib",
+					/Users/tado/Documents/of_v0.8.0_osx_release/addons/ofxSuperColliderServer/libs/supercollider/lib,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.9;
+				SDKROOT = macosx10.8;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
